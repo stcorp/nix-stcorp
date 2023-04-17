@@ -1,5 +1,5 @@
 {
-  description = "Overlay for S[&]T packages hosted on github and for third-party packages that are not part of nixpkgs";
+  description = "Overlay and NixOS modules for S[&]T packages hosted on github and for third-party packages that are not part of nixpkgs";
 
   outputs = { self, ... }: {
     overlays = {
@@ -34,6 +34,11 @@
           })
         ];
       });
+    };
+
+    nixosModules = {
+      legato = import ./nixos/legato;
+      default = import ./nixos;
     };
   };
 }
