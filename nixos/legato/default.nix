@@ -6,7 +6,7 @@ let
   pyenv = cfg.python.buildEnv.override {
     extraLibs = [ cfg.package ] ++ cfg.extraPythonLibs;
   };
-  
+
   env = pkgs.buildEnv { name = "legato-env"; paths = [ pyenv ] ++ cfg.extraLibs; };
 
 in with lib; {
@@ -86,5 +86,17 @@ in with lib; {
         User = cfg.user;
       };
     };
+
+    # Create folder for legato configuration files
+    environment.etc."legato/.empty" = {
+      text = "";
+      mode = "0444";
+    };
+
+    # Tell legato to watch the folder /etc/legato for configuration
+    environment.etc."legato.conf".text = ''
+      include_etc_dir:
+        include: /etc/legato/
+    '';
   };
 }
