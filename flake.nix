@@ -6,11 +6,13 @@
       external = (final: prev: {
         pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
           (pyfinal: pyprev: {
-          	# needed for muninn-django
+            # patched version of django-easyfilters that works with latest Django versions
+            django-easyfilters = pyfinal.callPackage ./pkgs/django-easyfilters.nix {};
+            # needed for muninn-django
             djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix {};
-          	# needed for muninn-ecmwfmars
+            # needed for muninn-ecmwfmars
             ecmwf-api-client = pyfinal.callPackage ./pkgs/external/ecmwf-api-client.nix {};
-          	# needed for legato
+            # needed for legato
             schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
           })
         ];
