@@ -17,6 +17,27 @@
           })
         ];
       });
+      djangocms = (final: prev: {
+        # django-cms with several extensions and dependencies
+        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+          (pyfinal: pyprev: {
+            django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix {};
+            django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix { unidecode = pyfinal.unidecode_1_1_2; };
+            django-sekizai = pyfinal.callPackage ./pkgs/external/django-sekizai.nix {};
+            djangocms-admin-style = pyfinal.callPackage ./pkgs/external/djangocms-admin-style.nix {};
+            djangocms-attributes-field = pyfinal.callPackage ./pkgs/external/djangocms-attributes-field.nix {};
+            djangocms-column = pyfinal.callPackage ./pkgs/external/djangocms-column.nix {};
+            djangocms-file = pyfinal.callPackage ./pkgs/external/djangocms-file.nix {};
+            djangocms-link = pyfinal.callPackage ./pkgs/external/djangocms-link.nix {};
+            djangocms-picture = pyfinal.callPackage ./pkgs/external/djangocms-picture.nix {};
+            djangocms-snippet = pyfinal.callPackage ./pkgs/external/djangocms-snippet.nix {};
+            djangocms-style = pyfinal.callPackage ./pkgs/external/djangocms-style.nix {};
+            djangocms-text-ckeditor = pyfinal.callPackage ./pkgs/external/djangocms-text-ckeditor.nix {};
+            djangocms-video = pyfinal.callPackage ./pkgs/external/djangocms-video.nix {};
+            unidecode_1_1_2 = pyfinal.callPackage ./pkgs/external/unidecode.nix {};
+          })
+        ];
+      });
       default = (final: prev: {
         coda = final.python3Packages.toPythonModule(final.callPackage ./pkgs/coda.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
         harp = final.python3Packages.toPythonModule(final.callPackage ./pkgs/harp.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
