@@ -14,11 +14,11 @@ with lib;
 
 buildPythonPackage {
   pname = "muninn";
-  version = "6.1";
+  version = "6.1.1";
 
   src = builtins.fetchurl {
-    url = https://files.pythonhosted.org/packages/3d/e3/ddb8843c4433ad5e95c9ab7153142be03ba68ab6530bbd3065592c45bbf7/muninn-6.1.tar.gz;
-    sha256 = "6d3717e669a72b72c4aa695ced331908fe5d1d05d8d66d74a05a8e9bcb78b41e";
+    url = https://files.pythonhosted.org/packages/c7/3d/38bd3eccdc6bf8e3c770a17e58d3f5fbafb62f703e9b44978c97f5b1b5d6/muninn-6.1.1.tar.gz;
+    sha256 = "c3e9bc65a7e6851daa6eb71563fd6535085629b7714638c7f5dd828676c422f0";
   };
 
   doCheck = false;
