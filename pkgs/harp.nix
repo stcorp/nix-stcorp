@@ -16,12 +16,12 @@ let inherit (lib) optional optionals; in
 
 stdenv.mkDerivation {
   pname = "harp";
-  version = "1.19";
+  version = "1.20";
 
   src = fetchurl {
     # use official source package since we need the codadefs of the submodules to be included
-    url = "https://github.com/stcorp/harp/releases/download/1.19/harp-1.19.tar.gz";
-    sha256 = "1akmjcwlcvbcsdh2w95ahx4r41w135189yf52ghgflq6zqray93q";
+    url = "https://github.com/stcorp/harp/releases/download/1.20/harp-1.20.tar.gz";
+    sha256 = "0ax762wc68bgfjadp2wxhrmpz9y39x7r21ab99ggfai1cjq72mvb";
   };
 
   buildInputs = [autoconf automake libtool bison flex zip hdf4 hdf5 coda]
