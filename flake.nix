@@ -50,6 +50,7 @@
             muninn-django = pyfinal.callPackage ./pkgs/muninn-django.nix {};
             muninn-ecmwfmars = pyfinal.callPackage ./pkgs/muninn-ecmwfmars.nix {};
             muninn-generic-products = pyfinal.callPackage ./pkgs/muninn-generic-products.nix {};
+            muninn-geoms = pyfinal.callPackage ./pkgs/muninn-geoms.nix {};
             muninn-sentinel1 = pyfinal.callPackage ./pkgs/muninn-sentinel1.nix {};
             muninn-sentinel5p = pyfinal.callPackage ./pkgs/muninn-sentinel5p.nix {};
             netcdf-compare = pyfinal.callPackage ./pkgs/netcdf-compare.nix {};
