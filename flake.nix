@@ -54,6 +54,7 @@
             muninn-sentinel1 = pyfinal.callPackage ./pkgs/muninn-sentinel1.nix {};
             muninn-sentinel5p = pyfinal.callPackage ./pkgs/muninn-sentinel5p.nix {};
             netcdf-compare = pyfinal.callPackage ./pkgs/netcdf-compare.nix {};
+            pvml = pyfinal.callPackage ./pkgs/pvml.nix {};
             safecheck = pyfinal.callPackage ./pkgs/safecheck.nix {};
           })
         ];
