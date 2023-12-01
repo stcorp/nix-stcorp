@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "biocheck";
-  version = "2023-05-03";
+  version = "2023-12-01";
 
   src = fetchGit {
     url = "https://github.nl/stcorp/biocheck.git";
-    rev = "b955fa16e87db974e93c410102590cfff31b0992";
+    rev = "a58d71c1b1834f17a2e65881ff749c6bc6566bee";
     ref = "main";
   };
 
