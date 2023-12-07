@@ -20,7 +20,7 @@ stdenv.mkDerivation {
 
   src = fetchurl {
     url = "https://github.com/stcorp/coda/archive/2.25.1.tar.gz";
-    sha256 = "d6c682fd5b1376f2b462e8265278a6253c508ec6993b8d669402be2ec958366c";
+    sha256 = "6109dee526ee6491a8175d0e5b17df9bd0d27f685c8851eab69905f6d8520666";
   };
 
   buildInputs = [autoconf automake libtool bison flex doxygen]
