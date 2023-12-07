@@ -41,6 +41,7 @@
       default = (final: prev: {
         coda = final.python3Packages.toPythonModule(final.callPackage ./pkgs/coda.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
         harp = final.python3Packages.toPythonModule(final.callPackage ./pkgs/harp.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
+        codadef-biomass = final.callPackage ./pkgs/codadef-biomass.nix {};
         pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
           (pyfinal: pyprev: {
             biocheck = pyfinal.callPackage ./pkgs/biocheck.nix {};
