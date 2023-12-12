@@ -47,6 +47,7 @@
             biocheck = pyfinal.callPackage ./pkgs/biocheck.nix {};
             legato = pyfinal.callPackage ./pkgs/legato.nix {};
             muninn = pyfinal.callPackage ./pkgs/muninn.nix {};
+            muninn-biomass = pyfinal.callPackage ./pkgs/muninn-biomass.nix {};
             muninn-cams = pyfinal.callPackage ./pkgs/muninn-cams.nix {};
             muninn-django = pyfinal.callPackage ./pkgs/muninn-django.nix {};
             muninn-ecmwfmars = pyfinal.callPackage ./pkgs/muninn-ecmwfmars.nix {};
