@@ -8,7 +8,7 @@ buildPythonPackage {
 
   src = fetchGit {
     url = "https://github.com/stcorp/biocheck.git";
-    rev = "985d6b3069e9ffa74f47b758c2f617cb54437f3e";
+    rev = "051342fbd9231de2fde0f69b3f32df77d41b0fe8";
     ref = "main";
   };
 
