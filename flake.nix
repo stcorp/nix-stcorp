@@ -38,6 +38,15 @@
           })
         ];
       });
+      pystac = (final: prev: {
+        # pystac dependencies
+        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+          (pyfinal: pyprev: {
+            pystac-client = pyfinal.callPackage ./pkgs/external/pystac-client.nix {};
+            pystac = pyfinal.callPackage ./pkgs/external/pystac.nix {};
+          })
+        ];
+      });
       default = (final: prev: {
         coda = final.python3Packages.toPythonModule(final.callPackage ./pkgs/coda.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
         harp = final.python3Packages.toPythonModule(final.callPackage ./pkgs/harp.nix { python = prev.python3; pythonPackages = prev.python3Packages; });
