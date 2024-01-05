@@ -6,7 +6,7 @@ buildPythonPackage {
 
   src = builtins.fetchurl {
     url = "https://github.com/stcorp/muninn-django/archive/1.2.1.tar.gz";
-    sha256 = "138d494c5f68ae933af70223d96cf65fe10907909604928e3bd718df07137cb3";
+    sha256 = "36c76f4274ab6d5b2ffcc3ec87fb5a1a02439c5abd8609d5a7f5dde1416b0375";
   };
 
   doCheck = false;
