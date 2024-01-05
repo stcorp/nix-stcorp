@@ -1,12 +1,12 @@
-{ buildPythonPackage, fetchurl, django, django-mptt, django_polymorphic, easy-thumbnails, unidecode }:
+{ buildPythonPackage, fetchPypi, django, django-mptt, django_polymorphic, easy-thumbnails, unidecode }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "django-filer";
-  version = "2.2.1";
+  version = "3.1.1";
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/7d/b9/52a968c6886f6bb6f71e7bbecdee29685f52680ac6b793397af4a5a75e66/django-filer-2.2.1.tar.gz;
-    sha256 = "588101c0d84c389451893c22a927a4a8de655e49e69a4b3b42e4f3aa56ea2ec7";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "c58628155ace4bb9f10f6ea9cdf92049b5961bd2ef82c5a3b76f09091f8af50d";
   };
 
   doCheck = false;

@@ -1,15 +1,15 @@
-{ buildPythonPackage, fetchurl, django, django_classytags, django-formtools, django-sekizai, django_treebeard, djangocms-admin-style }:
+{ buildPythonPackage, fetchPypi, django, django_classytags, django-formtools, django-sekizai, django_treebeard, djangocms-admin-style, packaging }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "django-cms";
-  version = "3.10.1";
+  version = "3.11.4";
 
-  src = fetchurl {
-    url = https://github.com/django-cms/django-cms/archive/refs/tags/3.10.1.tar.gz;
-    sha256 = "461ad57f17a489a43395eb4d28f0f685a0d72f49088159a6fb02af54c4571bac";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "58ff8bda97f0012fe365eaa542f1c91a310c6b774030ef5d6c2c3caaabf3cf31";
   };
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django django_classytags django-formtools django_treebeard django-sekizai djangocms-admin-style ];
+  propagatedBuildInputs = [ django django_classytags django-formtools django_treebeard django-sekizai djangocms-admin-style packaging ];
 }

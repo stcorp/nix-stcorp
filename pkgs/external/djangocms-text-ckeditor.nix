@@ -1,12 +1,12 @@
-{ buildPythonPackage, fetchurl, django-cms, html5lib, pillow }:
+{ buildPythonPackage, fetchPypi, django-cms, html5lib, pillow }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "djangocms-text-ckeditor";
-  version = "5.1.1";
+  version = "5.1.5";
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/38/5a/0a29e6011fd2b5c7ed1ad16168e77ab08255a659e35a8ea74c97ddb0ce2c/djangocms-text-ckeditor-5.1.1.tar.gz;
-    sha256 = "cb02aab2e0a96e6b77495ff74e9e094db8efa2f8a71afb244848e9584f614952";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "eca45b3393879c61bb69d3c23df14a5fd4bef1f2ad66dc36a5bf7bfe06c6b7c3";
   };
   doCheck = false;
 

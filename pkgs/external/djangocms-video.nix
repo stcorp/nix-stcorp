@@ -1,12 +1,12 @@
-{ buildPythonPackage, fetchurl, django-cms, django-filer, djangocms-attributes-field }:
+{ buildPythonPackage, fetchPypi, django-cms, django-filer, djangocms-attributes-field }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "djangocms-video";
-  version = "3.0.0";
+  version = "3.1.0";
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/67/4b/b7c96dbf53549837431122424c8c976d063a1fa7ecdbc2fd023d9bcdc6d0/djangocms-video-3.0.0.tar.gz;
-    sha256 = "0yfv6f2py589rlpmhka35vx3v2cihl7nvkjwl5h5yh6pn6fz6g85";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "ecb0d857f5f64c32015b898f829ab16034ea70789e7896009693c086bbd328cd";
   };
   doCheck = false;
 

@@ -1,12 +1,12 @@
-{ buildPythonPackage, fetchurl, django-cms, django-filer, djangocms-attributes-field }:
+{ buildPythonPackage, fetchPypi, django-cms, django-filer, djangocms-attributes-field }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "djangocms-file";
-  version = "3.0.0";
+  version = "3.0.1";
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/38/96/c73fbfd6a9ee8f81712e1ccaeb0df227681cbb79bcb20088c944fbc91faa/djangocms-file-3.0.0.tar.gz;
-    sha256 = "1pgzf28rggpzrz6d1pb2cbkfrkpk4iqfi7svlqpj1h1nw4gdzy31";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "b4952eb57385fadb31f67ed61e34eec3fe5886669163f959d1b56a9ac0fb5b42";
   };
 
   doCheck = false;

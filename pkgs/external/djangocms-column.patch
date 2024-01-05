@@ -1,0 +1,18 @@
+diff --git a/djangocms_column/migrations/0002_auto_20160915_0818.py b/djangocms_column/migrations/0002_auto_20160915_0818.py
+index 9737288..13ec218 100644
+--- a/djangocms_column/migrations/0002_auto_20160915_0818.py
++++ b/djangocms_column/migrations/0002_auto_20160915_0818.py
+@@ -12,11 +12,11 @@ class Migration(migrations.Migration):
+         migrations.AlterField(
+             model_name='column',
+             name='cmsplugin_ptr',
+-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='djangocms_column_column', primary_key=True, serialize=False, to='cms.CMSPlugin'),
++            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='%(app_label)s_%(class)s', serialize=False, to='cms.cmsplugin'),
+         ),
+         migrations.AlterField(
+             model_name='multicolumns',
+             name='cmsplugin_ptr',
+-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, related_name='djangocms_column_multicolumns', primary_key=True, serialize=False, to='cms.CMSPlugin'),
++            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='%(app_label)s_%(class)s', serialize=False, to='cms.cmsplugin'),
+         ),
+     ]

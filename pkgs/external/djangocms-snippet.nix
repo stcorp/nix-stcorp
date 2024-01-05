@@ -1,12 +1,12 @@
-{ buildPythonPackage, fetchurl, django-cms }:
+{ buildPythonPackage, fetchPypi, django-cms }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "djangocms-snippet";
-  version = "3.0.0";
+  version = "3.1.1";
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/8b/43/1c72bb8419e0478fecad7fe2865caeb76fb47c39be40ddaa341eb1b97264/djangocms-snippet-3.0.0.tar.gz;
-    sha256 = "10nbzlpqhw6jiagggwvlvp59yj2v7h71clg1jzivpnixj3y666dv";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "ecd4f43de121728d8f65b1267b88d66fa5b686f9bb7f79d3b15d7d2c5332c751";
   };
 
   doCheck = false;
