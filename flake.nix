@@ -8,22 +8,9 @@
           (pyfinal: pyprev: {
             # patched version of django-easyfilters that works with latest Django versions
             django-easyfilters = pyfinal.callPackage ./pkgs/django-easyfilters.nix {};
-            # needed for muninn-django
-            djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix {};
-            # needed for muninn-ecmwfmars
-            ecmwf-api-client = pyfinal.callPackage ./pkgs/external/ecmwf-api-client.nix {};
-            # needed for legato
-            schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
-          })
-        ];
-      });
-      djangocms = (final: prev: {
-        # django-cms with several extensions and dependencies
-        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-          (pyfinal: pyprev: {
+            # django-cms with several extensions and dependencies
             django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix {};
-            django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix { unidecode = pyfinal.unidecode_1_1_2; };
-            django-sekizai = pyfinal.callPackage ./pkgs/external/django-sekizai.nix {};
+            django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix {};
             djangocms-admin-style = pyfinal.callPackage ./pkgs/external/djangocms-admin-style.nix {};
             djangocms-attributes-field = pyfinal.callPackage ./pkgs/external/djangocms-attributes-field.nix {};
             djangocms-column = pyfinal.callPackage ./pkgs/external/djangocms-column.nix {};
@@ -34,16 +21,15 @@
             djangocms-style = pyfinal.callPackage ./pkgs/external/djangocms-style.nix {};
             djangocms-text-ckeditor = pyfinal.callPackage ./pkgs/external/djangocms-text-ckeditor.nix {};
             djangocms-video = pyfinal.callPackage ./pkgs/external/djangocms-video.nix {};
-            unidecode_1_1_2 = pyfinal.callPackage ./pkgs/external/unidecode.nix {};
-          })
-        ];
-      });
-      pystac = (final: prev: {
-        # pystac dependencies
-        pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-          (pyfinal: pyprev: {
+            # needed for muninn-django
+            djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix {};
+            # needed for muninn-ecmwfmars
+            ecmwf-api-client = pyfinal.callPackage ./pkgs/external/ecmwf-api-client.nix {};
+            # pystac packages
             pystac-client = pyfinal.callPackage ./pkgs/external/pystac-client.nix {};
             pystac = pyfinal.callPackage ./pkgs/external/pystac.nix {};
+            # needed for legato
+            schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
           })
         ];
       });

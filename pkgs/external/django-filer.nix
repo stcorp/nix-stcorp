@@ -1,4 +1,4 @@
-{ buildPythonPackage, fetchPypi, django, django-mptt, django_polymorphic, easy-thumbnails, unidecode }:
+{ buildPythonPackage, fetchPypi, django, django_polymorphic, easy-thumbnails }:
 
 buildPythonPackage rec {
   pname = "django-filer";
@@ -11,5 +11,5 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django django-mptt django_polymorphic easy-thumbnails unidecode ];
+  propagatedBuildInputs = [ django django_polymorphic easy-thumbnails ];
 }
