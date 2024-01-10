@@ -8,6 +8,7 @@
           (pyfinal: pyprev: {
             # patched version of django-easyfilters that works with latest Django versions
             django-easyfilters = pyfinal.callPackage ./pkgs/django-easyfilters.nix {};
+
             # django-cms with several extensions and dependencies
             django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix {};
             django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix {};
@@ -21,15 +22,22 @@
             djangocms-style = pyfinal.callPackage ./pkgs/external/djangocms-style.nix {};
             djangocms-text-ckeditor = pyfinal.callPackage ./pkgs/external/djangocms-text-ckeditor.nix {};
             djangocms-video = pyfinal.callPackage ./pkgs/external/djangocms-video.nix {};
+
             # needed for muninn-django
             djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix {};
+
             # needed for muninn-ecmwfmars
             ecmwf-api-client = pyfinal.callPackage ./pkgs/external/ecmwf-api-client.nix {};
+
             # pystac packages
             pystac-client = pyfinal.callPackage ./pkgs/external/pystac-client.nix {};
             pystac = pyfinal.callPackage ./pkgs/external/pystac.nix {};
+
             # needed for legato
             schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
+
+            # copernicus-marine-client and dependencies
+            motuclient = pyfinal.callPackage ./pkgs/external/motuclient.nix {};
           })
         ];
       });
