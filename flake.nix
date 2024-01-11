@@ -37,7 +37,9 @@
             schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
 
             # copernicus-marine-client and dependencies
+            copernicus-marine-client = pyfinal.callPackage ./pkgs/external/copernicus-marine-client.nix {};
             motuclient = pyfinal.callPackage ./pkgs/external/motuclient.nix {};
+            pydap = pyfinal.callPackage ./pkgs/external/pydap.nix {};
           })
         ];
       });
