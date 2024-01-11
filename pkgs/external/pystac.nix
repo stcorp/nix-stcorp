@@ -1,13 +1,15 @@
-{ buildPythonPackage, python-dateutil }:
+{ buildPythonPackage, fetchPypi, python-dateutil }:
 
 with builtins;
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "pystac";
-  version = "1.6.1";
-  src = fetchurl {
-      url = https://files.pythonhosted.org/packages/27/f8/ac7d847a6ebb6a2344daccc9594d40aacb44d1ee00a4b871a1c6e13ba049/pystac-1.6.1.tar.gz;
-      sha256 = "95ef493d6a6df4d982385c1d376c8aa0d967730e8ffeeda0f78cd7372faf066a";
+  version = "1.9.0";
+  format = "pyproject";
+
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "c6b5a86e241fca5e9267a7902c26679f208749a107e9015fe6aaf73a9dd40948";
   };
 
   doCheck = false;

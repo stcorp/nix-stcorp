@@ -1,17 +1,18 @@
-{ buildPythonPackage, pystac, requests }:
+{ buildPythonPackage, fetchPypi, pystac, python-dateutil, requests }:
 
 with builtins;
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "pystac-client";
-  version = "0.4.0";
+  version = "0.7.5";
+  format = "pyproject";
 
-  src = fetchurl {
-      url = https://files.pythonhosted.org/packages/56/bf/675ff855032e815df23464f5fe1b38cfd7bdfd765a31400f8853b28975c3/pystac-client-0.4.0.tar.gz;
-      sha256 = "8e014f669a88d55c7902a9c1a839048ee87939576060b2d3cc9f6d17cf879056";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "4b0ed0f7177dfc6e394aeb3ecf1236364f315b1d38c107afbcbbef17c2f7db8b";
   };
 
   doCheck = false;
 
-  propagatedBuildInputs = [ pystac requests ];
+  propagatedBuildInputs = [ pystac python-dateutil requests ];
 }
