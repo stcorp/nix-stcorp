@@ -41,5 +41,6 @@ in buildPythonPackage rec {
 
   patches = [ patch ];
 
-  propagatedBuildInputs = [ aiohttp boto3 cachier click dask lxml motuclient nest-asyncio netcdf4 poetry-core pydap pystac requests semver setuptools tqdm xarray zarr ];
+  nativeBuildInputs = [ poetry-core setuptools ];
+  propagatedBuildInputs = [ aiohttp boto3 cachier click dask lxml motuclient nest-asyncio netcdf4 pydap pystac requests semver tqdm xarray zarr ];
 }

@@ -14,5 +14,6 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ python-dateutil setuptools ];
+  nativeBuildInputs = [ setuptools ];
+  propagatedBuildInputs = [ python-dateutil ];
 }

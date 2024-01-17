@@ -11,5 +11,6 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ beautifulsoup4 docopt jinja2 numpy requests setuptools six webob ];
+  nativeBuildInputs = [ setuptools ];
+  propagatedBuildInputs = [ beautifulsoup4 docopt jinja2 numpy requests six webob ];
 }
