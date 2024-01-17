@@ -1,4 +1,4 @@
-{ buildPythonPackage, fetchPypi, python-dateutil }:
+{ buildPythonPackage, fetchPypi, python-dateutil, setuptools }:
 
 with builtins;
 
@@ -14,5 +14,5 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ python-dateutil ];
+  propagatedBuildInputs = [ python-dateutil setuptools ];
 }
