@@ -8,7 +8,8 @@ let
     +++ copernicus_marine_client-0.10.4/pyproject.toml	2024-01-17 10:56:27
     @@ -14,14 +14,14 @@
      setuptools = "^68.2.2"
-     motuclient = "^1.8.4"
+    -motuclient = "^1.8.4"
+    +motuclient = ">=1.8.4"
      cachier = "^2.2.1"
     -xarray = ">=2023.9,<2023.12"
     +xarray = ">=2023.8"
@@ -21,7 +22,8 @@ let
      boto3 = ">=1.25,<1.34"
     -semver = "^3.0.2"
     +semver = "^3.0.1"
-     nest-asyncio = "^1.5.8"
+    -nest-asyncio = "^1.5.8"
+    +nest-asyncio = "^1.5.6"
      pystac = "^1.8.3"
      lxml = "^4.9.0"
   '';
