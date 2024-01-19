@@ -11,6 +11,6 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  nativeBuildInputs = [ setuptools ];
-  propagatedBuildInputs = [ beautifulsoup4 docopt jinja2 numpy requests six webob ];
+  # pydap has a runtime dependency on pkg_resources (setuptools)
+  propagatedBuildInputs = [ beautifulsoup4 docopt jinja2 numpy requests setuptools six webob ];
 }
