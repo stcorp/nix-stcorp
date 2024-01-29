@@ -36,8 +36,8 @@
             # needed for legato
             schedule = pyfinal.callPackage ./pkgs/external/schedule.nix {};
 
-            # copernicus-marine-client and dependencies
-            copernicus-marine-client = pyfinal.callPackage ./pkgs/external/copernicus-marine-client.nix {};
+            # copernicusmarine and dependencies
+            copernicusmarine = pyfinal.callPackage ./pkgs/external/copernicusmarine.nix {};
             motuclient = pyfinal.callPackage ./pkgs/external/motuclient.nix {};
             pydap = pyfinal.callPackage ./pkgs/external/pydap.nix {};
           })

@@ -3,29 +3,30 @@
 let
 
   # Prevent the client from creating a cache directory when the package is imported
-  patch = writeText "copernicus-marine-client.patch" ''
-    --- copernicus_marine_client-0.10.4-orig/copernicus_marine_client/core_functions/utils.py	2024-01-23 11:21:03
-    +++ copernicus_marine_client-0.10.4/copernicus_marine_client/core_functions/utils.py	2024-01-23 11:21:56
-    @@ -30,8 +30,6 @@
+  patch = writeText "copernicusmarine.patch" ''
+    --- copernicusmarine-1.0.0-orig/copernicusmarine/core_functions/utils.py	2024-01-23 16:55:27
+    +++ copernicusmarine-1.0.0/copernicusmarine/core_functions/utils.py	2024-01-29 08:53:19
+    @@ -30,9 +30,7 @@
 
      CACHE_BASE_DIRECTORY = DEFAULT_CLIENT_BASE_DIRECTORY / "cache"
 
     -pathlib.Path(CACHE_BASE_DIRECTORY).mkdir(parents=True, exist_ok=True)
     -
-     # Client name, to be used in custom query parameters for each request to MDS S3
-     # endpoints, in order to track statistics of usage
-     CLIENT_NAME = "copernicus-marine-client"
+
+     DATETIME_SUPPORTED_FORMATS = [
+         "%Y",
+         "%Y-%m-%d",
   '';
 
 in buildPythonPackage rec {
-  pname = "copernicus-marine-client";
-  version = "0.10.4";
+  pname = "copernicusmarine";
+  version = "1.0.0";
   format = "pyproject";
 
   src = fetchPypi {
     inherit version;
-    pname = "copernicus_marine_client";  # the package on pypi uses '_' instead of '-'
-    sha256 = "8151873fcd381beb746d25fa901752ac5ba7574c6aebf6e557bb051f38339dee";
+    pname = "copernicusmarine";
+    sha256 = "e81b9a496b27a2df9c682f212047afcdcf9177a073f2c7461ad6d00858be42e9";
   };
 
   patches = [ patch ];
