@@ -1,4 +1,4 @@
-{ buildPythonPackage, fetchPypi, django, django_polymorphic, easy-thumbnails }:
+{ buildPythonPackage, fetchPypi, django, django-polymorphic, easy-thumbnails, setuptools }:
 
 buildPythonPackage rec {
   pname = "django-filer";
@@ -11,5 +11,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django django_polymorphic easy-thumbnails ];
+  # we need to propagate setuptools because django-polymorphic calls it at run-time
+  # and doesn't include it as a run-time dependency itself (at the moment)
+  propagatedBuildInputs = [ django django-polymorphic easy-thumbnails setuptools ];
 }
