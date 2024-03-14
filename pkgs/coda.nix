@@ -16,11 +16,11 @@ let inherit (lib) optional optionals; in
 
 stdenv.mkDerivation {
   pname = "coda";
-  version = "2.25.1";
+  version = "2.25.2";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/coda/archive/2.25.1.tar.gz";
-    sha256 = "6109dee526ee6491a8175d0e5b17df9bd0d27f685c8851eab69905f6d8520666";
+    url = "https://github.com/stcorp/coda/archive/2.25.2.tar.gz";
+    sha256 = "e8e6ed0213e2e52a45600fba9e996ce20c11a89294c8c0d79bda10403a7ae297";
   };
 
   buildInputs = [autoconf automake libtool bison flex doxygen]

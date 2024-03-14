@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-cams";
-  version = "1.3";
+  version = "2.0";
 
   src = fetchurl {
-    url = https://files.pythonhosted.org/packages/c6/13/02ea8d9bd080b1a30d3ff10d7fdfe859b3e9ea74437292c0555b9ccaf173/muninn-cams-1.3.tar.gz;
-    sha256 = "6a02d42a203760ea1af292e0a7d8085ccf9cf6302d7e1458687e4dd7fd72421f";
+    url = "https://github.com/stcorp/muninn-cams/archive/2.0.tar.gz";
+    sha256 = "6d2093b3c5fc22e8429de47f95ce6f734e5f60503c4a10bc9972e2ec3280ac00";
   };
 
   propagatedBuildInputs = [ muninn muninn-ecmwfmars ];
