@@ -1,4 +1,4 @@
-{ lib, python, buildPythonPackage, paramiko, requests, tabulate, tqdm,
+{ lib, buildPythonPackage, paramiko, requests, tabulate, tqdm,
   withSqlite ? true, sqlite, libspatialite, pysqlite ? null,
   withPostgres ? true, psycopg2 ? null,
   withS3 ? false, boto3 ? null,
@@ -10,15 +10,16 @@ assert withS3 -> boto3 != null;
 assert withPostgres -> psycopg2 != null;
 assert withSwift -> swiftclient != null;
 
+with builtins;
 with lib;
 
 buildPythonPackage {
   pname = "muninn";
-  version = "6.3";
+  version = "6.4";
 
-  src = builtins.fetchurl {
-    url = https://files.pythonhosted.org/packages/6b/6c/26bfa10ba0e737c7b75da3260196573314542445afe33cb47276f67a4a77/muninn-6.3.tar.gz;
-    sha256 = "227f680f5b69d5952754c3809d2dbbb7de14c1404ad66d4cf58907e6031c25a9";
+  src = fetchurl {
+    url = "https://github.com/stcorp/muninn/archive/6.4.tar.gz";
+    sha256 = "6b4b374e7fd62d110b8c03f6992057d4c6f4140f356aa68b706d6e86264e6ec8";
   };
 
   doCheck = false;
