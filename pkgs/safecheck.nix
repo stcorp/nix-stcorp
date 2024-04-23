@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "safecheck";
-  version = "2023-08-09";
+  version = "2024-04-05";
 
   src = fetchGit {
     url = "https://github.com/stcorp/safecheck.git";
-    rev = "98c40f2e2eaf37ec027e43169a71a50d00f4a01b";
+    rev = "c4dcf0d0af7c5d4a22db6a3a110837665e30d914";
     ref = "main";
   };
 
