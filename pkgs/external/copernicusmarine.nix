@@ -2,13 +2,13 @@
 
 buildPythonPackage rec {
   pname = "copernicusmarine";
-  version = "1.2.1";
+  version = "1.2.3";
   format = "pyproject";
 
   src = fetchPypi {
     inherit version;
     pname = "copernicusmarine";
-    sha256 = "e637347733b6e0610b63219448cddbd2e937d1612b8a1422c9523c49a41fd647";
+    sha256 = "4d92ec21cb2362b2a0a8e9aaeae37e72020a4036682fd6ebf87c3c9f8b1914fa";
   };
 
   pythonRelaxDeps = true;
