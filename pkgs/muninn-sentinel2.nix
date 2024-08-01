@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-sentinel2";
-  version = "2024-07-31";
+  version = "2024-08-01";
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-sentinel2.git";
-    rev = "dcb320bec951c804edaf7d92383a471a70e5b540";
+    rev = "3995c0ff371100f812fc55d198b7e154352cfb7a";
     ref = "main";
   };
 
