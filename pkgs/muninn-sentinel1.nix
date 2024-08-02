@@ -8,7 +8,7 @@ buildPythonPackage {
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-sentinel1.git";
-    rev = "c6c40f83573abb85b174a1b4a05ee0fd82192299";
+    rev = "4085d9b7d2cfaabf9c5b047ec080a9effeeaf9f8";
     ref = "main";
   };
 
