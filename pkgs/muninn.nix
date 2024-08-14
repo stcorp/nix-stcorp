@@ -15,11 +15,11 @@ with lib;
 
 buildPythonPackage {
   pname = "muninn";
-  version = "6.4";
+  version = "6.4.1";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/muninn/archive/6.4.tar.gz";
-    sha256 = "6b4b374e7fd62d110b8c03f6992057d4c6f4140f356aa68b706d6e86264e6ec8";
+    url = "https://github.com/stcorp/muninn/archive/6.4.1.tar.gz";
+    sha256 = "7caeb76d24442a6f317f11387f12020c96eb8c74d332ccf64134d5d136a47b7d";
   };
 
   doCheck = false;
