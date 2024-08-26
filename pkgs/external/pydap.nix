@@ -2,11 +2,11 @@
 
 buildPythonPackage rec {
   pname = "pydap";
-  version = "3.4.1";
+  version = "3.5";
 
   src = fetchPypi  {
     inherit pname version;
-    sha256 = "17c46087b53c6aec9bc5495a5d52aca19b2aa4b045f370b9f4b3a6058f5d8df7";
+    sha256 = "0ee6cb7a4892ef22a15c4e2aa58b2656104c542c74faf16c580c56fdf97647ab";
   };
 
   doCheck = false;
