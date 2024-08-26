@@ -1,4 +1,4 @@
-{ buildPythonPackage, fetchPypi, beautifulsoup4, docopt, jinja2, numpy, requests, setuptools, six, webob }:
+{ buildPythonPackage, fetchPypi, beautifulsoup4, docopt, importlib-metadata, jinja2, numpy, requests, setuptools, six, webob }:
 
 buildPythonPackage rec {
   pname = "pydap";
@@ -12,5 +12,5 @@ buildPythonPackage rec {
   doCheck = false;
 
   # pydap has a runtime dependency on pkg_resources (setuptools)
-  propagatedBuildInputs = [ beautifulsoup4 docopt jinja2 numpy requests setuptools six webob ];
+  propagatedBuildInputs = [ beautifulsoup4 docopt importlib-metadata jinja2 numpy requests setuptools six webob ];
 }
