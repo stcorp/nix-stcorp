@@ -1,4 +1,4 @@
-{ buildPythonPackage, muninn }:
+{ buildPythonPackage, coda, muninn }:
 
 with builtins;
 
@@ -12,5 +12,5 @@ buildPythonPackage {
     ref = "main";
   };
 
-  propagatedBuildInputs = [ muninn ];
+  propagatedBuildInputs = [ coda muninn ];
 }
