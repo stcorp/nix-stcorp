@@ -12,5 +12,5 @@ buildPythonPackage {
     ref = "main";
   };
 
-  propagatedBuildInputs = [ ]oauthlib requests requests_oauthlib ];
+  propagatedBuildInputs = [ oauthlib requests requests_oauthlib ];
 }
