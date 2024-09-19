@@ -50,6 +50,7 @@
         pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
           (pyfinal: pyprev: {
             biocheck = pyfinal.callPackage ./pkgs/biocheck.nix {};
+            cscip-client = pyfinal.callPackage ./pkgs/cscip-client.nix {};
             legato = pyfinal.callPackage ./pkgs/legato.nix {};
             muninn = pyfinal.callPackage ./pkgs/muninn.nix {};
             muninn-biomass = pyfinal.callPackage ./pkgs/muninn-biomass.nix {};
