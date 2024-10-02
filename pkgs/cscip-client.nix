@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "cscip-client";
-  version = "2024-09-19";
+  version = "2024-10-02";
 
   src = fetchGit {
     url = "https://github.com/stcorp/cscip-client.git";
-    rev = "b29dc0b43b4a96a874335a30068245b1a03445fe";
+    rev = "53136ec3d43fd76a6af0b486147f0b5f398ba575";
     ref = "main";
   };
 
