@@ -1,6 +1,6 @@
 { buildPythonPackage, fetchPypi }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "schedule";
   version = "1.2.2";
 

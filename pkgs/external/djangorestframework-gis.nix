@@ -1,6 +1,6 @@
 { buildPythonPackage, fetchPypi, djangorestframework }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "djangorestframework-gis";
   version = "1.1";
 

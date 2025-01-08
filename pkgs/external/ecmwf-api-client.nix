@@ -1,6 +1,6 @@
 { buildPythonPackage, fetchPypi }:
 
-buildPythonPackage {
+buildPythonPackage rec {
   pname = "ecmwf-api-client";
   version = "1.6.3";
 
