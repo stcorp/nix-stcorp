@@ -1,13 +1,13 @@
-{ buildPythonPackage, fetchurl }:
+{ buildPythonPackage, fetchPypi }:
 
 buildPythonPackage {
   pname = "schedule";
-  version = "1.1.0";
+  version = "1.2.2";
 
   doCheck = false;
 
-  src = fetchurl {
-    url = https://files.pythonhosted.org/packages/a8/b5/a291a4c0faa491fd5baefa6d89011ece581cff47b23c0a39b42a63383358/schedule-1.1.0.tar.gz;
-    sha256 = "1japp1nx5ffv3ncm8aj670fdhgba3g86siqxf1pdpr1x520m3yzr";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "15fe9c75fe5fd9b9627f3f19cc0ef1420508f9f9a46f45cd0769ef75ede5f0b7";
   };
 }
