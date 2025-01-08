@@ -5,7 +5,8 @@ buildPythonPackage rec {
   version = "1.1";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "djangorestframework_gis";
+    inherit version;
     sha256 = "84b915503a59263ed9473ecde34b19260c3e9c5c8ebb3aea8d91a67fd39f7215";
   };
 
