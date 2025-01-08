@@ -4,12 +4,12 @@ with builtins;
 
 buildPythonPackage rec {
   pname = "pystac";
-  version = "1.9.0";
+  version = "1.11.0";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "c6b5a86e241fca5e9267a7902c26679f208749a107e9015fe6aaf73a9dd40948";
+    sha256 = "acb1e04be398a0cda2d8870ab5e90457783a8014a206590233171d8b2ae0d9e7";
   };
 
   doCheck = false;

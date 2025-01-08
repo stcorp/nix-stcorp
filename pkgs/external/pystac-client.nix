@@ -4,12 +4,12 @@ with builtins;
 
 buildPythonPackage rec {
   pname = "pystac-client";
-  version = "0.7.5";
+  version = "0.8.5";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "4b0ed0f7177dfc6e394aeb3ecf1236364f315b1d38c107afbcbbef17c2f7db8b";
+    sha256 = "7fba8d4f3c641ff7e840084fc3a53c96443a227f8a5889ae500fc38183ccd994";
   };
 
   doCheck = false;
