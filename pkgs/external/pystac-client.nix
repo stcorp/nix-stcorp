@@ -8,7 +8,8 @@ buildPythonPackage rec {
   format = "pyproject";
 
   src = fetchPypi {
-    inherit pname version;
+    inherit version;
+    pname = "pystac_client";
     sha256 = "7fba8d4f3c641ff7e840084fc3a53c96443a227f8a5889ae500fc38183ccd994";
   };
 
