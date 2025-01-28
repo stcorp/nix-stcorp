@@ -67,6 +67,14 @@ in with lib; {
           Name of the user to run legato.
         '';
       };
+
+      appendConfig = mkOption {
+        type = types.lines;
+        default = "";
+        description = ''
+          Configuration lines to be appended to the legato configuration file.
+        '';
+      };
     };
   };
 
@@ -87,16 +95,9 @@ in with lib; {
       };
     };
 
-    # Create folder for legato configuration files
-    environment.etc."legato/.empty" = {
-      text = "";
-      mode = "0444";
-    };
-
-    # Tell legato to watch the folder /etc/legato for configuration
+    # Generate legato configuration file
     environment.etc."legato.conf".text = ''
-      include_etc_dir:
-        include: /etc/legato/
+      ${cfg.appendConfig}
     '';
   };
 }
