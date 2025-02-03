@@ -1,6 +1,7 @@
-{pkgs, lib, config, ...}:
+{ pkgs, lib, config, ... }:
 
 let
+
   cfg = config.services.legato;
 
   pyenv = cfg.python.buildEnv.override {
@@ -9,7 +10,15 @@ let
 
   env = pkgs.buildEnv { name = "legato-env"; paths = [ pyenv ] ++ cfg.extraLibs; };
 
-in with lib; {
+  configFile = pkgs.writeText "legato.conf" ''
+    ${cfg.appendConfig}
+  '';
+
+in
+
+with lib;
+
+{
   options = {
     services.legato = {
       enable = mkOption {
@@ -87,17 +96,13 @@ in with lib; {
       environment = {
         LEGATO = "${env}/bin/legato";
       } // cfg.extraEnvironment;
+      restartTriggers = [ configFile ];
       serviceConfig = {
-        ExecStart = "${env}/bin/legato /etc/legato.conf";
+        ExecStart = "${env}/bin/legato ${configFile}";
         Restart = "always";
         RuntimeDirectory = "legato";
         User = cfg.user;
       };
     };
-
-    # Generate legato configuration file
-    environment.etc."legato.conf".text = ''
-      ${cfg.appendConfig}
-    '';
   };
 }
