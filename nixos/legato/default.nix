@@ -10,7 +10,7 @@ let
 
   env = pkgs.buildEnv { name = "legato-env"; paths = [ pyenv ] ++ cfg.extraLibs; };
 
-  configFile = pkgs.writeText "legato.conf" ''
+  defaultConfigFile = pkgs.writeText "legato.conf" ''
     ${cfg.appendConfig}
   '';
 
@@ -77,11 +77,20 @@ with lib;
         '';
       };
 
+      configFile = lib.mkOption {
+        type = lib.types.path;
+        default = defaultConfigFile;
+        description = ''
+          The legato config file to use. By default this is generated from config.services.legato.appendConfig.
+        '';
+      };
+
       appendConfig = mkOption {
         type = types.lines;
         default = "";
         description = ''
           Configuration lines to be appended to the legato configuration file.
+          This setting is ignored if config.services.legato.configFile is set explicitly.
         '';
       };
     };
@@ -96,9 +105,9 @@ with lib;
       environment = {
         LEGATO = "${env}/bin/legato";
       } // cfg.extraEnvironment;
-      restartTriggers = [ configFile ];
+      restartTriggers = [ cfg.configFile ];
       serviceConfig = {
-        ExecStart = "${env}/bin/legato ${configFile}";
+        ExecStart = "${env}/bin/legato ${cfg.configFile}";
         Restart = "always";
         RuntimeDirectory = "legato";
         User = cfg.user;
