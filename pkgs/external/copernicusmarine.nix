@@ -1,18 +1,18 @@
-{ buildPythonPackage, fetchPypi, writeText, aiohttp, boto3, cachier, click, dask, lxml, motuclient, nest-asyncio, netcdf4, poetry-core, pydap, pystac, pythonRelaxDepsHook, requests, semver, setuptools, tqdm, xarray, zarr }:
+{ buildPythonPackage, fetchPypi, poetry-core, boto3, click, dask, h5netcdf, lxml, numpy, pydantic, pystac, requests, semver, setuptools, tqdm, xarray, zarr }:
 
 buildPythonPackage rec {
   pname = "copernicusmarine";
-  version = "2.0.1";
+  version = "2.0.0";
   format = "pyproject";
 
   src = fetchPypi {
     inherit version;
     pname = "copernicusmarine";
-    sha256 = "badbc5a9aa3d2c7d5952762447fda7b577467e186fd8607b29bbc6ce850f30e4";
+    sha256 = "b279ae3ac9e6c832d98eb4cf55bd2a167782d5ec695df70dc7e015cdddea631c";
   };
 
   pythonRelaxDeps = true;
 
-  nativeBuildInputs = [ poetry-core pythonRelaxDepsHook setuptools ];
-  propagatedBuildInputs = [ aiohttp boto3 cachier click dask lxml motuclient nest-asyncio netcdf4 pydap pystac requests semver tqdm xarray zarr ];
+  nativeBuildInputs = [ poetry-core ];
+  propagatedBuildInputs = [ boto3 click dask h5netcdf lxml numpy pydantic pystac requests semver setuptools tqdm xarray zarr ];
 }
