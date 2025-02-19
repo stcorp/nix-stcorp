@@ -8,7 +8,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "copernicusmarine";
-    sha256 = "94164e4f2f236c3e2cb27c9d441c02febf4713db73f2f013d27ce832d21827b1";
+    sha256 = "badbc5a9aa3d2c7d5952762447fda7b577467e186fd8607b29bbc6ce850f30e4";
   };
 
   pythonRelaxDeps = true;
