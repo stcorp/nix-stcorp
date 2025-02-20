@@ -78,6 +78,7 @@ with lib;
       };
 
       group = mkOption {
+        default = null;
         type = types.nullOr types.str;
         description = ''
           Name of the group to run legato.
