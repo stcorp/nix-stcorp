@@ -124,11 +124,13 @@ with lib;
       };
     };
 
-    users = {
-      users = lib.optionalAttrs (cfg.user == "legato") {
-        legato = {
-          isSystemUser = true;
-        };
+    users = lib.optionalAttrs (cfg.user == "legato") {
+      users.legato = {
+        group = (if cfg.group == null then "legato" else cfg.group);
+        isSystemUser = true;
+      };
+      groups = lib.optionalAttrs (cfg.group == null) {
+        legato = {};
       };
     };
   };
