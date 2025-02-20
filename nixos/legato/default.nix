@@ -78,8 +78,7 @@ with lib;
       };
 
       group = mkOption {
-        default = "";
-        type = types.str;
+        type = types.nullOr types.str;
         description = ''
           Name of the group to run legato.
         '';
@@ -119,7 +118,7 @@ with lib;
         Restart = "always";
         RuntimeDirectory = "legato";
         User = cfg.user;
-      } // lib.optionalAttrs (cfg.group != "") {
+      } // lib.optionalAttrs (cfg.group != null) {
         Group = cfg.group;
       };
     };
