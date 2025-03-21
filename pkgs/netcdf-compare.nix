@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "netcdf-compare";
-  version = "2023-10-19";
+  version = "2025-01-24";
 
   src = fetchGit {
     url = "https://github.com/stcorp/netcdf-compare.git";
-    rev = "1797dbb042bb1c7de1a552fbbb03ca380174fd54";
+    rev = "e2c320990ffa69f08e209e7cc41856a28552cc6d";
     ref = "main";
   };
 
