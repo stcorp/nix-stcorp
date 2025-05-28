@@ -6,7 +6,7 @@ stdenv.mkDerivation {
 
   src = fetchGit {
     url = "https://github.com/stcorp/codadef-biomass.git";
-    rev = "9d5cd7b3149bcb4dce7f6f1c82b802369a8f9c60";
+    rev = "e97038fc353d5bfc6bc8e10326bb28708ff96d59";
     ref = "main";
   };
 
