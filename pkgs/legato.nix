@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "legato";
-  version = "1.3.1";
+  version = "1.3.2";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/legato/archive/1.3.1.tar.gz";
-    sha256 = "1219d842bcaea37d86aaaccf2ae461840bf2a373c709bda561a093d7ea2a91ba";
+    url = "https://github.com/stcorp/legato/archive/1.3.2.tar.gz";
+    sha256 = "793d92ee8c9b30ada67fffb1802b8cccbbc96f55ded05496c06c6a236a314b4c";
   };
 
   propagatedBuildInputs = [ pyyaml schedule watchdog ];
