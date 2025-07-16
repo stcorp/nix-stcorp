@@ -1,15 +1,12 @@
 { buildPythonPackage, django, djangorestframework, djangorestframework-gis, muninn }:
 
-with builtins;
-
 buildPythonPackage {
   pname = "muninn-django";
-  version = "2025-07-16";
+  version = "1.2.2";
 
-  src = fetchGit {
-    url = "https://github.com/stcorp/muninn-django.git";
-    rev = "38f63798a8f999b3b4b1cf68223fb5eb69fcea42";
-    ref = "master";
+  src = builtins.fetchurl {
+    url = "https://github.com/stcorp/muninn-django/archive/1.2.2.tar.gz";
+    sha256 = "55d3fb682bcb3568bc0b05db4528cebc39df6a2dea337d2ce14ae85c9f3d3beb";
   };
 
   doCheck = false;
