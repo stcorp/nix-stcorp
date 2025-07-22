@@ -11,6 +11,16 @@
         pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
           (pyfinal: pyprev: {
             # use boto<1.36
+            aiobotocore = pyprev.aiobotocore.overridePythonAttrs (attr: {
+              version = "2.15.1";
+              src = final.fetchFromGitHub {
+                owner = "aio-libs";
+                repo = "aiobotocore";
+                tag = "2.15.1";
+                hash = "sha256-kPSkvvXBBwnWrdf0jmDNiTG6T1qpm5pNcPDHpnMFdmc=";
+              };
+              doCheck = false;
+            });
             boto3 = pyprev.boto3.overrideAttrs (attr: {
               version = "1.35.30";
               src = final.fetchFromGitHub {
@@ -27,6 +37,9 @@
                 version = "1.35.30";
                 hash = "sha256-q1NQ6KUOSNNx+i1RfWXCmkDEN4jLmhU4f5PqxaI98P0=";
               };
+            });
+            s3fs = pyprev.s3fs.overridePythonAttrs (attr: {
+              doCheck = false;
             });
             s3transfer = pyprev.s3transfer.overrideAttrs (attr: {
               version = "0.10.1";
