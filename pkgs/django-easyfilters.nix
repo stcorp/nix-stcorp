@@ -1,4 +1,8 @@
-{ buildPythonPackage, django, python-dateutil }:
+{
+  buildPythonPackage,
+  django,
+  python-dateutil,
+}:
 
 buildPythonPackage {
   pname = "django-easyfilters";
@@ -12,5 +16,8 @@ buildPythonPackage {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django python-dateutil ];
+  propagatedBuildInputs = [
+    django
+    python-dateutil
+  ];
 }

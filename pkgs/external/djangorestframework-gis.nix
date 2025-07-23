@@ -1,4 +1,8 @@
-{ buildPythonPackage, fetchPypi, djangorestframework }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  djangorestframework,
+}:
 
 buildPythonPackage rec {
   pname = "djangorestframework-gis";

@@ -1,4 +1,10 @@
-{ buildPythonPackage, fetchPypi, django-cms, html5lib, pillow }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django-cms,
+  html5lib,
+  pillow,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-text-ckeditor";
@@ -10,5 +16,9 @@ buildPythonPackage rec {
   };
   doCheck = false;
 
-  propagatedBuildInputs = [ django-cms html5lib pillow ];
+  propagatedBuildInputs = [
+    django-cms
+    html5lib
+    pillow
+  ];
 }

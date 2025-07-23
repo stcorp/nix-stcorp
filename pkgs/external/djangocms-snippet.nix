@@ -1,4 +1,8 @@
-{ buildPythonPackage, fetchPypi, django-cms }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django-cms,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-snippet";

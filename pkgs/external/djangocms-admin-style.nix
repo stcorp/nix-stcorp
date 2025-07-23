@@ -1,4 +1,8 @@
-{ buildPythonPackage, fetchPypi, django }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-admin-style";

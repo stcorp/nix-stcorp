@@ -1,4 +1,9 @@
-{ buildPythonPackage, fetchPypi, python-dateutil, setuptools }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  python-dateutil,
+  setuptools,
+}:
 
 buildPythonPackage rec {
   pname = "motuclient";
@@ -9,5 +14,8 @@ buildPythonPackage rec {
     sha256 = "9ef1f34b9866caff760f9b3218b62bd11aaa7b5da5844308a968004752940d8f";
   };
 
-  propagatedBuildInputs = [ python-dateutil setuptools ];
+  propagatedBuildInputs = [
+    python-dateutil
+    setuptools
+  ];
 }

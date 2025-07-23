@@ -1,4 +1,9 @@
-{ buildPythonPackage, oauthlib, requests, requests_oauthlib }:
+{
+  buildPythonPackage,
+  oauthlib,
+  requests,
+  requests_oauthlib,
+}:
 
 with builtins;
 
@@ -12,5 +17,9 @@ buildPythonPackage {
     ref = "main";
   };
 
-  propagatedBuildInputs = [ oauthlib requests requests_oauthlib ];
+  propagatedBuildInputs = [
+    oauthlib
+    requests
+    requests_oauthlib
+  ];
 }

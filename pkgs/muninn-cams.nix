@@ -1,4 +1,8 @@
-{ buildPythonPackage, muninn, muninn-ecmwfmars }:
+{
+  buildPythonPackage,
+  muninn,
+  muninn-ecmwfmars,
+}:
 
 with builtins;
 
@@ -11,5 +15,8 @@ buildPythonPackage {
     sha256 = "b2c638b45f0852056828460567dbd6d14d8767a0598df9755723737f33a481ac";
   };
 
-  propagatedBuildInputs = [ muninn muninn-ecmwfmars ];
+  propagatedBuildInputs = [
+    muninn
+    muninn-ecmwfmars
+  ];
 }

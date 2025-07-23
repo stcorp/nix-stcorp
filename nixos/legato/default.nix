@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 let
 
@@ -8,7 +13,10 @@ let
     extraLibs = [ cfg.package ] ++ cfg.extraPythonLibs;
   };
 
-  env = pkgs.buildEnv { name = "legato-env"; paths = [ pyenv ] ++ cfg.extraLibs; };
+  env = pkgs.buildEnv {
+    name = "legato-env";
+    paths = [ pyenv ] ++ cfg.extraLibs;
+  };
 
   defaultConfigFile = pkgs.writeText "legato.conf" ''
     ${cfg.appendConfig}
@@ -47,7 +55,7 @@ with lib;
 
       extraEnvironment = mkOption {
         type = types.attrs;
-        default = {};
+        default = { };
         description = ''
           Extra environment for the systemd unit
         '';
@@ -55,7 +63,7 @@ with lib;
 
       extraPythonLibs = mkOption {
         type = types.listOf types.package;
-        default = [];
+        default = [ ];
         description = ''
           Extra python packages to add to the environment.
         '';
@@ -63,7 +71,7 @@ with lib;
 
       extraLibs = mkOption {
         type = types.listOf types.package;
-        default = [];
+        default = [ ];
         description = ''
           Extra (non-python) packages to add to the environment.
         '';
@@ -112,14 +120,16 @@ with lib;
       path = [ env ];
       environment = {
         LEGATO = "${env}/bin/legato";
-      } // cfg.extraEnvironment;
+      }
+      // cfg.extraEnvironment;
       restartTriggers = [ cfg.configFile ];
       serviceConfig = {
         ExecStart = "${env}/bin/legato ${cfg.configFile}";
         Restart = "always";
         RuntimeDirectory = "legato";
         User = cfg.user;
-      } // lib.optionalAttrs (cfg.group != null) {
+      }
+      // lib.optionalAttrs (cfg.group != null) {
         Group = cfg.group;
       };
     };
@@ -130,7 +140,7 @@ with lib;
         isSystemUser = true;
       };
       groups = lib.optionalAttrs (cfg.group == null) {
-        legato = {};
+        legato = { };
       };
     };
   };

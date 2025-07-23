@@ -1,4 +1,9 @@
-{ buildPythonPackage, fetchPypi, django-cms, django }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django-cms,
+  django,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-column";
@@ -14,5 +19,8 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django-cms django ];
+  propagatedBuildInputs = [
+    django-cms
+    django
+  ];
 }

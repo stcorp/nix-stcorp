@@ -1,4 +1,9 @@
-{ buildPythonPackage, fetchPypi, django-cms, djangocms-attributes-field }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django-cms,
+  djangocms-attributes-field,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-style";
@@ -11,5 +16,8 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django-cms djangocms-attributes-field ];
+  propagatedBuildInputs = [
+    django-cms
+    djangocms-attributes-field
+  ];
 }

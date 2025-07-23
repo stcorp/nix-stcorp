@@ -1,4 +1,9 @@
-{ buildPythonPackage, pyyaml, schedule, watchdog }:
+{
+  buildPythonPackage,
+  pyyaml,
+  schedule,
+  watchdog,
+}:
 
 with builtins;
 
@@ -11,5 +16,9 @@ buildPythonPackage {
     sha256 = "793d92ee8c9b30ada67fffb1802b8cccbbc96f55ded05496c06c6a236a314b4c";
   };
 
-  propagatedBuildInputs = [ pyyaml schedule watchdog ];
+  propagatedBuildInputs = [
+    pyyaml
+    schedule
+    watchdog
+  ];
 }

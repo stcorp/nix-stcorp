@@ -1,4 +1,14 @@
-{ buildPythonPackage, fetchPypi, django, django_classytags, django-formtools, django-sekizai, django_treebeard, djangocms-admin-style, packaging }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django,
+  django_classytags,
+  django-formtools,
+  django-sekizai,
+  django_treebeard,
+  djangocms-admin-style,
+  packaging,
+}:
 
 buildPythonPackage rec {
   pname = "django-cms";
@@ -11,5 +21,13 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django django_classytags django-formtools django_treebeard django-sekizai djangocms-admin-style packaging ];
+  propagatedBuildInputs = [
+    django
+    django_classytags
+    django-formtools
+    django_treebeard
+    django-sekizai
+    djangocms-admin-style
+    packaging
+  ];
 }

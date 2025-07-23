@@ -1,4 +1,8 @@
-{ buildPythonPackage, coda, muninn }:
+{
+  buildPythonPackage,
+  coda,
+  muninn,
+}:
 
 with builtins;
 
@@ -11,5 +15,8 @@ buildPythonPackage {
     sha256 = "b073273e39fc2b0ecccaa052fd24141dda1d8ac13ba56415da9968b09989e562";
   };
 
-  propagatedBuildInputs = [ coda muninn ];
+  propagatedBuildInputs = [
+    coda
+    muninn
+  ];
 }

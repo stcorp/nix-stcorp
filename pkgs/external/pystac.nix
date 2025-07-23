@@ -1,4 +1,9 @@
-{ buildPythonPackage, fetchPypi, python-dateutil, setuptools }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  python-dateutil,
+  setuptools,
+}:
 
 with builtins;
 

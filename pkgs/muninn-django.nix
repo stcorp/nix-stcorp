@@ -1,4 +1,10 @@
-{ buildPythonPackage, django, djangorestframework, djangorestframework-gis, muninn }:
+{
+  buildPythonPackage,
+  django,
+  djangorestframework,
+  djangorestframework-gis,
+  muninn,
+}:
 
 buildPythonPackage {
   pname = "muninn-django";
@@ -11,5 +17,10 @@ buildPythonPackage {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django djangorestframework djangorestframework-gis muninn ];
+  propagatedBuildInputs = [
+    django
+    djangorestframework
+    djangorestframework-gis
+    muninn
+  ];
 }

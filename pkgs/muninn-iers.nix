@@ -1,4 +1,4 @@
-{ buildPythonPackage,  muninn }:
+{ buildPythonPackage, muninn }:
 
 with builtins;
 

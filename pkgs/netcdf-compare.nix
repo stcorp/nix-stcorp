@@ -1,4 +1,8 @@
-{ buildPythonPackage, netcdf4, numpy }:
+{
+  buildPythonPackage,
+  netcdf4,
+  numpy,
+}:
 
 with builtins;
 
@@ -12,5 +16,8 @@ buildPythonPackage {
     ref = "main";
   };
 
-  propagatedBuildInputs = [ netcdf4 numpy ];
+  propagatedBuildInputs = [
+    netcdf4
+    numpy
+  ];
 }

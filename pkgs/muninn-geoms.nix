@@ -1,4 +1,8 @@
-{ buildPythonPackage, coda, muninn }:
+{
+  buildPythonPackage,
+  coda,
+  muninn,
+}:
 
 buildPythonPackage {
   pname = "muninn-geoms";
@@ -9,5 +13,8 @@ buildPythonPackage {
     sha256 = "12ds4qkdr9k4y9jn8fhb5mgmn0b2673qcz2d5qdgz2c22d6vxh91";
   };
 
-  propagatedBuildInputs = [ coda muninn ];
+  propagatedBuildInputs = [
+    coda
+    muninn
+  ];
 }

@@ -1,4 +1,22 @@
-{ buildPythonPackage, fetchPypi, poetry-core, boto3, click, dask, h5netcdf, lxml, numpy, pydantic, pystac, requests, semver, setuptools, tqdm, xarray, zarr }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  boto3,
+  click,
+  dask,
+  h5netcdf,
+  lxml,
+  numpy,
+  pydantic,
+  pystac,
+  requests,
+  semver,
+  setuptools,
+  tqdm,
+  xarray,
+  zarr,
+}:
 
 buildPythonPackage rec {
   pname = "copernicusmarine";
@@ -14,5 +32,20 @@ buildPythonPackage rec {
   pythonRelaxDeps = true;
 
   nativeBuildInputs = [ poetry-core ];
-  propagatedBuildInputs = [ boto3 click dask h5netcdf lxml numpy pydantic pystac requests semver setuptools tqdm xarray zarr ];
+  propagatedBuildInputs = [
+    boto3
+    click
+    dask
+    h5netcdf
+    lxml
+    numpy
+    pydantic
+    pystac
+    requests
+    semver
+    setuptools
+    tqdm
+    xarray
+    zarr
+  ];
 }

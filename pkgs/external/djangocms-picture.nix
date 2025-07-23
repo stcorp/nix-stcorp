@@ -1,4 +1,11 @@
-{ buildPythonPackage, fetchPypi, django-cms, django-filer, djangocms-attributes-field, easy-thumbnails }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  django-cms,
+  django-filer,
+  djangocms-attributes-field,
+  easy-thumbnails,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-picture";
@@ -11,5 +18,10 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ django-cms django-filer djangocms-attributes-field easy-thumbnails ];
+  propagatedBuildInputs = [
+    django-cms
+    django-filer
+    djangocms-attributes-field
+    easy-thumbnails
+  ];
 }

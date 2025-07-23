@@ -1,8 +1,20 @@
-{ lib, buildPythonPackage, paramiko, requests, tabulate, tqdm,
-  withSqlite ? true, sqlite, libspatialite, pysqlite ? null,
-  withPostgres ? true, psycopg2 ? null,
-  withS3 ? false, boto3 ? null,
-  withSwift ? false, swiftclient ? null,
+{
+  lib,
+  buildPythonPackage,
+  paramiko,
+  requests,
+  tabulate,
+  tqdm,
+  withSqlite ? true,
+  sqlite,
+  libspatialite,
+  pysqlite ? null,
+  withPostgres ? true,
+  psycopg2 ? null,
+  withS3 ? false,
+  boto3 ? null,
+  withSwift ? false,
+  swiftclient ? null,
 }:
 
 assert withSqlite -> (sqlite != null && libspatialite != null);
@@ -24,9 +36,17 @@ buildPythonPackage {
 
   doCheck = false;
 
-  propagatedBuildInputs = [ paramiko requests tabulate tqdm ]
-    ++ optionals withSqlite [ sqlite libspatialite ]
-    ++ optional withPostgres psycopg2
-    ++ optional withS3 boto3
-    ++ optional withSwift swiftclient;
+  propagatedBuildInputs = [
+    paramiko
+    requests
+    tabulate
+    tqdm
+  ]
+  ++ optionals withSqlite [
+    sqlite
+    libspatialite
+  ]
+  ++ optional withPostgres psycopg2
+  ++ optional withS3 boto3
+  ++ optional withSwift swiftclient;
 }
