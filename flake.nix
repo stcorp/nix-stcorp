@@ -81,6 +81,10 @@
                 # needed for muninn-django
                 djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix { };
 
+                # eccodes python interface
+                findlibs = pyfinal.callPackage ./pkgs/external/findlibs.nix { };
+                python-eccodes = pyfinal.callPackage ./pkgs/external/python-eccodes.nix { };
+
                 # needed for muninn-ecmwfmars
                 ecmwf-api-client = pyfinal.callPackage ./pkgs/external/ecmwf-api-client.nix { };
 
