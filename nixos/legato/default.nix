@@ -39,14 +39,14 @@ with lib;
 
       package = mkOption {
         type = types.package;
-        default = pkgs.pythonPackages.legato;
+        default = pkgs.python3Packages.legato;
         description = ''
           Legato package
         '';
       };
 
       python = mkOption {
-        default = pkgs.python;
+        default = pkgs.python3;
         type = types.package;
         description = ''
           Python derivation to use.
