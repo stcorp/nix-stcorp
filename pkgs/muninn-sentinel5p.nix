@@ -4,13 +4,16 @@
   muninn,
 }:
 
+with builtins;
+
 buildPythonPackage {
   pname = "muninn-sentinel5p";
-  version = "3.1";
+  version = "2025-09-25";
 
-  src = builtins.fetchurl {
-    url = "https://github.com/stcorp/muninn-sentinel5p/archive/3.1.tar.gz";
-    sha256 = "ca1ee5b265e3204423a91b8400592c2fa9b3558830dadb6c4864c7484e8ffdf6";
+  src = fetchGit {
+    url = "https://github.com/stcorp/muninn-sentinel5p.git";
+    rev = "f9e343b7634817d07cd782b0485f079ddb7a765b";
+    ref = "main";
   };
 
   propagatedBuildInputs = [
