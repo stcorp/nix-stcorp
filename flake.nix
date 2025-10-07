@@ -130,6 +130,7 @@
                 muninn-biomass = pyfinal.callPackage ./pkgs/muninn-biomass.nix { };
                 muninn-cams = pyfinal.callPackage ./pkgs/muninn-cams.nix { };
                 muninn-django = pyfinal.callPackage ./pkgs/muninn-django.nix { };
+                muninn-earthcare = pyfinal.callPackage ./pkgs/muninn-earthcare.nix { };
                 muninn-ecmwfmars = pyfinal.callPackage ./pkgs/muninn-ecmwfmars.nix { };
                 muninn-eps-sg = pyfinal.callPackage ./pkgs/muninn-eps-sg.nix { };
                 muninn-generic-products = pyfinal.callPackage ./pkgs/muninn-generic-products.nix { };
