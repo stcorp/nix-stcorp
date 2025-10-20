@@ -4,11 +4,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-iers";
-  version = "2025-08-13";
+  version = "2025-10-20";
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-iers.git";
-    rev = "62d0ce90eb2de6eb85db1e0ef11214731f020123";
+    rev = "1069672b9fecaf3f590ffa10e318ad057e06ca74";
     ref = "main";
   };
 
