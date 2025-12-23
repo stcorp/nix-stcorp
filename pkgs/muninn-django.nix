@@ -4,6 +4,7 @@
   djangorestframework,
   djangorestframework-gis,
   muninn,
+  setuptools,
 }:
 
 buildPythonPackage {
@@ -14,6 +15,10 @@ buildPythonPackage {
     url = "https://github.com/stcorp/muninn-django/archive/1.2.2.tar.gz";
     sha256 = "55d3fb682bcb3568bc0b05db4528cebc39df6a2dea337d2ce14ae85c9f3d3beb";
   };
+
+  pyproject = true;
+
+  build-system = [ setuptools ];
 
   doCheck = false;
 

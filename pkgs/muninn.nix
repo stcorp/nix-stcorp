@@ -3,6 +3,7 @@
   buildPythonPackage,
   paramiko,
   requests,
+  setuptools,
   tabulate,
   tqdm,
   withSqlite ? true,
@@ -33,6 +34,10 @@ buildPythonPackage {
     url = "https://github.com/stcorp/muninn/archive/7.2.1.tar.gz";
     sha256 = "f3188c6ef74399106ed12a724a8ccb81d3587a9347db6820f55cdacf70f2e75d";
   };
+
+  pyproject = true;
+
+  build-system = [ setuptools ];
 
   doCheck = false;
 
