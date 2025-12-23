@@ -2,21 +2,28 @@
   buildPythonPackage,
   fetchPypi,
   djangorestframework,
+  django-filter,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangorestframework-gis";
-  version = "1.1";
+  version = "1.2.0";
 
   src = fetchPypi {
     pname = "djangorestframework_gis";
     inherit version;
-    sha256 = "84b915503a59263ed9473ecde34b19260c3e9c5c8ebb3aea8d91a67fd39f7215";
+    sha256 = "sha256-cCuprUQXO3zHDkjGyE2kjCj2+CYSzJAad/21TFxXyXE=";
   };
+
+  pyproject = true;
+
+  build-system = [ setuptools ];
 
   doCheck = false;
 
   propagatedBuildInputs = [
     djangorestframework
+    django-filter
   ];
 }
