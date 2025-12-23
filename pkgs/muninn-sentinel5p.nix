@@ -16,6 +16,10 @@ buildPythonPackage {
     ref = "main";
   };
 
+  pyproject = true;
+
+  build-system = [ setuptools ];
+
   propagatedBuildInputs = [
     coda
     muninn

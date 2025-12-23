@@ -2,7 +2,7 @@
   buildPythonPackage,
   oauthlib,
   requests,
-  requests_oauthlib,
+  requests-oauthlib,
 }:
 
 with builtins;
@@ -20,6 +20,6 @@ buildPythonPackage {
   propagatedBuildInputs = [
     oauthlib
     requests
-    requests_oauthlib
+    requests-oauthlib
   ];
 }
