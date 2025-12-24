@@ -2,6 +2,7 @@
   buildPythonPackage,
   coda,
   muninn,
+  setuptools,
 }:
 
 with builtins;
