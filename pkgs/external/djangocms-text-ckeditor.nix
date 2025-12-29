@@ -4,11 +4,13 @@
   django-cms,
   html5lib,
   pillow,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangocms-text-ckeditor";
   version = "5.1.5";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -16,6 +18,7 @@ buildPythonPackage rec {
   };
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     django-cms
     html5lib

@@ -2,17 +2,19 @@
   buildPythonPackage,
   fetchPypi,
   django,
-  django_classytags,
+  django-classy-tags,
   django-formtools,
   django-sekizai,
-  django_treebeard,
+  django-treebeard,
   djangocms-admin-style,
   packaging,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "django-cms";
   version = "3.11.4";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -21,11 +23,12 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     django
-    django_classytags
+    django-classy-tags
     django-formtools
-    django_treebeard
+    django-treebeard
     django-sekizai
     djangocms-admin-style
     packaging

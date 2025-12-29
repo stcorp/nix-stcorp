@@ -10,6 +10,7 @@
 buildPythonPackage rec {
   pname = "django-filer";
   version = "3.1.1";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -18,6 +19,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   # we need to propagate setuptools because django-polymorphic calls it at run-time
   # and doesn't include it as a run-time dependency itself (at the moment)
   propagatedBuildInputs = [

@@ -2,11 +2,13 @@
   buildPythonPackage,
   fetchPypi,
   django,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangocms-admin-style";
   version = "3.2.6";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -15,5 +17,6 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ django ];
 }

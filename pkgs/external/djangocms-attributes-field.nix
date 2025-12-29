@@ -2,11 +2,13 @@
   buildPythonPackage,
   fetchPypi,
   django-cms,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangocms-attributes-field";
   version = "3.0.0";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -15,5 +17,6 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ django-cms ];
 }

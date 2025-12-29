@@ -5,11 +5,13 @@
   django-filer,
   djangocms-attributes-field,
   easy-thumbnails,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangocms-picture";
   version = "4.1.1";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -18,6 +20,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     django-cms
     django-filer

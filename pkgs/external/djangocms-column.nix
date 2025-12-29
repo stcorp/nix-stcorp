@@ -3,11 +3,13 @@
   fetchPypi,
   django-cms,
   django,
+  setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "djangocms-column";
   version = "2.0.0";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -19,6 +21,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     django-cms
     django

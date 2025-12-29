@@ -1,10 +1,15 @@
-{ buildPythonPackage, muninn }:
+{
+  buildPythonPackage,
+  muninn,
+  setuptools,
+}:
 
 with builtins;
 
 buildPythonPackage {
   pname = "muninn-biomass";
   version = "2025-11-21";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-biomass.git";
@@ -12,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ muninn ];
 }

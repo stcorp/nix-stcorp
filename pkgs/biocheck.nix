@@ -1,10 +1,15 @@
-{ buildPythonPackage, lxml }:
+{
+  buildPythonPackage,
+  lxml,
+  setuptools,
+}:
 
 with builtins;
 
 buildPythonPackage {
   pname = "biocheck";
   version = "2023-12-15";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/biocheck.git";
@@ -12,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ lxml ];
 }
