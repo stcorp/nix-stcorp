@@ -3,6 +3,7 @@
   oauthlib,
   requests,
   requests-oauthlib,
+  setuptools,
 }:
 
 with builtins;
@@ -10,6 +11,7 @@ with builtins;
 buildPythonPackage {
   pname = "cscip-client";
   version = "2025-11-06";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/cscip-client.git";
@@ -17,6 +19,7 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     oauthlib
     requests

@@ -2,6 +2,7 @@
   buildPythonPackage,
   netcdf4,
   numpy,
+  setuptools,
 }:
 
 with builtins;
@@ -9,6 +10,7 @@ with builtins;
 buildPythonPackage {
   pname = "netcdf-compare";
   version = "2025-01-24";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/netcdf-compare.git";
@@ -16,6 +18,7 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     netcdf4
     numpy

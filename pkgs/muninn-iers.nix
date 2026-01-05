@@ -1,10 +1,15 @@
-{ buildPythonPackage, muninn }:
+{
+  buildPythonPackage,
+  muninn,
+  setuptools
+}:
 
 with builtins;
 
 buildPythonPackage {
   pname = "muninn-iers";
   version = "2025-10-20";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-iers.git";
@@ -12,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ muninn ];
 }

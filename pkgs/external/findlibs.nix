@@ -7,6 +7,7 @@ buildPythonPackage {
   pname = "findlibs";
   version = "0.1.2";
   pyproject = true;
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     setuptools
   ];

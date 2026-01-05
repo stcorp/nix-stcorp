@@ -10,7 +10,7 @@ with builtins;
 buildPythonPackage rec {
   pname = "pystac";
   version = "1.11.0";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -19,6 +19,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   nativeBuildInputs = [ setuptools ];
   propagatedBuildInputs = [ python-dateutil ];
 }

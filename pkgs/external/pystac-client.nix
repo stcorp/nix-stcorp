@@ -12,7 +12,7 @@ with builtins;
 buildPythonPackage rec {
   pname = "pystac-client";
   version = "0.8.5";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchPypi {
     inherit version;
@@ -22,6 +22,7 @@ buildPythonPackage rec {
 
   doCheck = false;
 
+  build-system = [ setuptools ];
   nativeBuildInputs = [ setuptools ];
   propagatedBuildInputs = [
     pystac

@@ -21,7 +21,7 @@
 buildPythonPackage rec {
   pname = "copernicusmarine";
   version = "2.0.0";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchPypi {
     inherit version;
@@ -31,6 +31,7 @@ buildPythonPackage rec {
 
   pythonRelaxDeps = true;
 
+  build-system = [ setuptools ];
   nativeBuildInputs = [ poetry-core ];
   propagatedBuildInputs = [
     boto3

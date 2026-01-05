@@ -1,6 +1,7 @@
 {
   buildPythonPackage,
   muninn,
+  setuptools,
 }:
 
 with builtins;
@@ -8,6 +9,7 @@ with builtins;
 buildPythonPackage {
   pname = "muninn-earthcare";
   version = "2025-11-26";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-earthcare.git";
@@ -15,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ muninn ];
 }

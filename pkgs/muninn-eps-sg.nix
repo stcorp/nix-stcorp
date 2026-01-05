@@ -2,6 +2,7 @@
   buildPythonPackage,
   coda,
   muninn,
+  setuptools,
 }:
 
 with builtins;
@@ -9,6 +10,7 @@ with builtins;
 buildPythonPackage {
   pname = "muninn-eps-sg";
   version = "2025-12-19";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-eps-sg.git";
@@ -16,6 +18,7 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     coda
     muninn

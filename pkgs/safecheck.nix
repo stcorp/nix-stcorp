@@ -1,10 +1,15 @@
-{ buildPythonPackage, lxml }:
+{
+  buildPythonPackage,
+  lxml,
+  setuptools,
+}:
 
 with builtins;
 
 buildPythonPackage {
   pname = "safecheck";
   version = "2025-09-09";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/safecheck.git";
@@ -12,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ lxml ];
 }

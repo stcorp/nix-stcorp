@@ -1,10 +1,15 @@
-{ buildPythonPackage, muninn }:
+{
+  buildPythonPackage,
+  muninn,
+  setuptools,
+}:
 
 with builtins;
 
 buildPythonPackage {
   pname = "muninn-sentinel2";
   version = "2025-10-24";
+  pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-sentinel2.git";
@@ -12,5 +17,6 @@ buildPythonPackage {
     ref = "main";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ muninn ];
 }

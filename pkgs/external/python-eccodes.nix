@@ -6,10 +6,13 @@
   eccodes,
   findlibs,
   numpy,
+  setuptools,
 }:
 buildPythonPackage {
   pname = "python-eccodes";
   version = "2.43.0";
+  pyproject = true;
+  build-system = [ setuptools ];
   propagatedBuildInputs = [
     attrs
     cffi
