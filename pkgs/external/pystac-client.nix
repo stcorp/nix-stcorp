@@ -23,7 +23,6 @@ buildPythonPackage rec {
   doCheck = false;
 
   build-system = [ setuptools ];
-  nativeBuildInputs = [ setuptools ];
   propagatedBuildInputs = [
     pystac
     python-dateutil
