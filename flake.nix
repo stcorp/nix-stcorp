@@ -81,6 +81,9 @@
                 djangocms-text-ckeditor = pyfinal.callPackage ./pkgs/external/djangocms-text-ckeditor.nix { };
                 djangocms-video = pyfinal.callPackage ./pkgs/external/djangocms-video.nix { };
 
+                # django-sendfile2
+                django-sendfile2 = pyfinal.callPackage ./pkgs/external/django-sendfile2.nix { };
+
                 # needed for muninn-django
                 djangorestframework-gis = pyfinal.callPackage ./pkgs/external/djangorestframework-gis.nix { };
 
