@@ -2,6 +2,7 @@
   buildPythonPackage,
   fetchPypi,
   poetry-core,
+  arcosparse,
   boto3,
   click,
   dask,
@@ -20,20 +21,21 @@
 
 buildPythonPackage rec {
   pname = "copernicusmarine";
-  version = "2.0.0";
+  version = "2.3.0";
   pyproject = true;
 
   src = fetchPypi {
     inherit version;
     pname = "copernicusmarine";
-    sha256 = "b279ae3ac9e6c832d98eb4cf55bd2a167782d5ec695df70dc7e015cdddea631c";
+    sha256 = "6506022e261e4adbdd8e35a9733a48f0fa3c5bca1da2c1cfb2d0a54c5a775460";
   };
 
   pythonRelaxDeps = true;
 
-  build-system = [ setuptools ];
+  build-system = [ poetry-core ];
   nativeBuildInputs = [ poetry-core ];
   propagatedBuildInputs = [
+    arcosparse
     boto3
     click
     dask

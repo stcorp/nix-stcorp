@@ -102,6 +102,7 @@
                 schedule = pyfinal.callPackage ./pkgs/external/schedule.nix { };
 
                 # copernicusmarine and dependencies
+                arcosparse = pyfinal.callPackage ./pkgs/external/arcosparse.nix { };
                 copernicusmarine = pyfinal.callPackage ./pkgs/external/copernicusmarine.nix { };
                 motuclient = pyfinal.callPackage ./pkgs/external/motuclient.nix { };
                 pydap = pyfinal.callPackage ./pkgs/external/pydap.nix { };
