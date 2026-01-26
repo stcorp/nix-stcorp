@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation {
   pname = "codadef-biomass";
-  version = "2026-01-15";
+  version = "2026-01-26";
 
   src = fetchGit {
     url = "https://github.com/stcorp/codadef-biomass.git";
-    rev = "ab9653c27efc9d262b1fbffe9b576e999f636d15";
+    rev = "79a9c63dbf13fd83b66d8628bb1e5dbde1dab04a";
     ref = "main";
   };
 
