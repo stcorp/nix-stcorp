@@ -8,12 +8,12 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-biomass";
-  version = "2026-01-06";
+  version = "2026-01-26";
   pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-biomass.git";
-    rev = "2a796c1a05672276d0912c7cd58ec67fc98af96f";
+    rev = "df5a794ad5ba55702ac721225ec87234115b8fb8";
     ref = "main";
   };
 
