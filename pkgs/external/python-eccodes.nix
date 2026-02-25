@@ -20,6 +20,13 @@ buildPythonPackage {
     findlibs
     numpy
   ];
+
+  # 2.44.0 declares a runtime dependency on 'eccodeslib'
+  # (for PyPI binary wheels). Newer versions allow disabling
+  # via DEPEND_ON_ECCODESLIB. In nixpkgs we link against
+  # the system 'eccodes'. Remove when updating to > 2.44.
+  dontCheckRuntimeDeps = true;
+
   src = fetchFromGitHub {
     owner = "ecmwf";
     repo = "eccodes-python";
