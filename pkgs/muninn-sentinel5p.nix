@@ -9,11 +9,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-sentinel5p";
-  version = "2025-09-30";
+  version = "2026-04-23";
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-sentinel5p.git";
-    rev = "dbfb7bb51e406f4d78335d576fa2dec87b1c3453";
+    rev = "33ff8079563f5309b1c70d3fb6f99fa3893b8fb1";
     ref = "main";
   };
 

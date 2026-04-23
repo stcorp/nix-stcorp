@@ -10,12 +10,12 @@ with builtins;
 
 buildPythonPackage {
   pname = "cscip-client";
-  version = "2025-11-06";
+  version = "2026-04-20";
   pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/cscip-client.git";
-    rev = "f97de6ed0ddc8f0a35a09eeb3c7e60dc589b2a80";
+    rev = "7e842df8a355c578b77bf0be7afe265770ae7f92";
     ref = "main";
   };
 
