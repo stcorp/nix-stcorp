@@ -9,11 +9,11 @@
 
 buildPythonPackage {
   pname = "muninn-django";
-  version = "1.2.2";
+  version = "1.3";
 
   src = builtins.fetchurl {
-    url = "https://github.com/stcorp/muninn-django/archive/1.2.2.tar.gz";
-    sha256 = "55d3fb682bcb3568bc0b05db4528cebc39df6a2dea337d2ce14ae85c9f3d3beb";
+    url = "https://github.com/stcorp/muninn-django/archive/1.3.tar.gz";
+    sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
   };
 
   pyproject = true;
