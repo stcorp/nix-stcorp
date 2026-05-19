@@ -9,11 +9,11 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-cams";
-  version = "2.2";
+  version = "2.2.1";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/muninn-cams/archive/2.2.tar.gz";
-    sha256 = "32e4b1e9523b9df9952d7d3e09032a29fd0b382070a370f92d4f6adc240009e5";
+    url = "https://github.com/stcorp/muninn-cams/archive/2.2.1.tar.gz";
+    sha256 = "ce92301ddff7ca799eb9ace4a3c2ed9bee84025971325253896378665076bf8a";
   };
 
   pyproject = true;
