@@ -9,12 +9,13 @@
 
 buildPythonPackage rec {
   pname = "django-filer";
-  version = "3.1.1";
+  version = "3.4.4";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "c58628155ace4bb9f10f6ea9cdf92049b5961bd2ef82c5a3b76f09091f8af50d";
+    inherit version;
+    pname = "django_filer";
+    sha256 = "465eec9fe63310a5b718267beebe7c348ee44afd16c6b5056a7bab49ee483412";
   };
 
   doCheck = false;
