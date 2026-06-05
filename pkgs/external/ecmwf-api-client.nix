@@ -6,11 +6,12 @@
 
 buildPythonPackage rec {
   pname = "ecmwf-api-client";
-  version = "1.6.3";
+  version = "1.6.5";
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "1mmhbnmbpcnjbwx1npnvxwrncamla13rlfcpihcxbqkj9aivs01s";
+    inherit version;
+    pname = "ecmwf_api_client";
+    sha256 = "1fc0eba27163686b7fba5da027cc5dc0a361f75b652508fa7805f50599368b1c";
   };
 
   pyproject = true;
