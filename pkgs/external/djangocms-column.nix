@@ -8,16 +8,14 @@
 
 buildPythonPackage rec {
   pname = "djangocms-column";
-  version = "2.0.0";
+  version = "2.1.0";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "1ded8ae99053cf0a174e862e9c8c72d5b9c5dec78ed4a860a0630c616c2e48b7";
+    inherit version;
+    pname = "djangocms_column";
+    sha256 = "b73867f7ba487e759cc62da1b3d4dafc6fed5244ddf1b04485eda22bb50ac68a";
   };
-
-  # fix for https://github.com/django-cms/djangocms-column/issues/57
-  patches = [ ./djangocms-column.patch ];
 
   doCheck = false;
 

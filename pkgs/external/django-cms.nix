@@ -13,12 +13,13 @@
 
 buildPythonPackage rec {
   pname = "django-cms";
-  version = "3.11.4";
+  version = "3.11.11";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "58ff8bda97f0012fe365eaa542f1c91a310c6b774030ef5d6c2c3caaabf3cf31";
+    inherit version;
+    pname = "django_cms";
+    sha256 = "5d3cf3b64c244f0f7fa8f9310be82bb0465653113ba8d4d7d896ecad1dc44425";
   };
 
   doCheck = false;

@@ -70,15 +70,12 @@
                 # django-cms with several extensions and dependencies
                 django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix { };
                 django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix { };
-                djangocms-admin-style = pyfinal.callPackage ./pkgs/external/djangocms-admin-style.nix { };
                 djangocms-attributes-field = pyfinal.callPackage ./pkgs/external/djangocms-attributes-field.nix { };
                 djangocms-column = pyfinal.callPackage ./pkgs/external/djangocms-column.nix { };
                 djangocms-file = pyfinal.callPackage ./pkgs/external/djangocms-file.nix { };
                 djangocms-link = pyfinal.callPackage ./pkgs/external/djangocms-link.nix { };
                 djangocms-picture = pyfinal.callPackage ./pkgs/external/djangocms-picture.nix { };
-                djangocms-snippet = pyfinal.callPackage ./pkgs/external/djangocms-snippet.nix { };
                 djangocms-style = pyfinal.callPackage ./pkgs/external/djangocms-style.nix { };
-                djangocms-text-ckeditor = pyfinal.callPackage ./pkgs/external/djangocms-text-ckeditor.nix { };
                 djangocms-video = pyfinal.callPackage ./pkgs/external/djangocms-video.nix { };
 
                 # django-sendfile2
