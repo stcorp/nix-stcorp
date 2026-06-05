@@ -10,7 +10,7 @@
 }:
 
 buildPythonPackage rec {
-  pname = "arcospares";
+  pname = "arcosparse";
   version = "0.4.2";
   pyproject = true;
 
