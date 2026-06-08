@@ -8,18 +8,18 @@
   django-treebeard,
   djangocms-admin-style,
   packaging,
-  setuptools,
+  setuptools
 }:
 
 buildPythonPackage rec {
   pname = "django-cms";
-  version = "3.11.11";
+  version = "4.1.11";
   pyproject = true;
 
   src = fetchPypi {
-    inherit version;
     pname = "django_cms";
-    sha256 = "5d3cf3b64c244f0f7fa8f9310be82bb0465653113ba8d4d7d896ecad1dc44425";
+    inherit version;
+    sha256 = "1be4ffeadaf443a1c93893bf7257c15dc3d48586f940de121badaa82242d74b0";
   };
 
   doCheck = false;
@@ -29,8 +29,8 @@ buildPythonPackage rec {
     django
     django-classy-tags
     django-formtools
-    django-treebeard
     django-sekizai
+    django-treebeard
     djangocms-admin-style
     packaging
   ];
