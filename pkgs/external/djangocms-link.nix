@@ -21,7 +21,10 @@ buildPythonPackage rec {
 
   doCheck = false;
 
-  build-system = [ setuptools setuptools-scm ];
+  build-system = [
+    setuptools
+    setuptools-scm
+  ];
   propagatedBuildInputs = [
     django-cms
     django-filer

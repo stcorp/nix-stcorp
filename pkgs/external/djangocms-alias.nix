@@ -4,7 +4,7 @@
   django,
   django-cms,
   django-parler,
-  setuptools
+  setuptools,
 }:
 
 buildPythonPackage rec {

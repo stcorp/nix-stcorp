@@ -4,7 +4,7 @@
   django,
   django-cms,
   django-fsm,
-  setuptools
+  setuptools,
 }:
 
 buildPythonPackage rec {

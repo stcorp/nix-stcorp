@@ -8,7 +8,7 @@
   django-treebeard,
   djangocms-admin-style,
   packaging,
-  setuptools
+  setuptools,
 }:
 
 buildPythonPackage rec {

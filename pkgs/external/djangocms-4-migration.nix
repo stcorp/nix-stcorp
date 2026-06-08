@@ -1,4 +1,8 @@
-{ buildPythonPackage, fetchPypi, setuptools }:
+{
+  buildPythonPackage,
+  fetchPypi,
+  setuptools,
+}:
 
 buildPythonPackage rec {
   pname = "djangocms-4-migration";

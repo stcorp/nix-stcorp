@@ -71,7 +71,7 @@
                 django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix { };
                 django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix { };
                 djangocms-4-migration = pyfinal.callPackage ./pkgs/external/djangocms-4-migration.nix { };
-                djangocms-alias= pyfinal.callPackage ./pkgs/external/djangocms-alias.nix { };
+                djangocms-alias = pyfinal.callPackage ./pkgs/external/djangocms-alias.nix { };
                 djangocms-attributes-field = pyfinal.callPackage ./pkgs/external/djangocms-attributes-field.nix { };
                 djangocms-column = pyfinal.callPackage ./pkgs/external/djangocms-column.nix { };
                 djangocms-file = pyfinal.callPackage ./pkgs/external/djangocms-file.nix { };

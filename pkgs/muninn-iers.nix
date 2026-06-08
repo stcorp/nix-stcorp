@@ -1,7 +1,7 @@
 {
   buildPythonPackage,
   muninn,
-  setuptools
+  setuptools,
 }:
 
 with builtins;
