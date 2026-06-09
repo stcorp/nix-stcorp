@@ -5,6 +5,7 @@
   django-polymorphic,
   easy-thumbnails,
   setuptools,
+  svglib,
 }:
 
 buildPythonPackage rec {
@@ -28,5 +29,6 @@ buildPythonPackage rec {
     django-polymorphic
     easy-thumbnails
     setuptools
+    svglib
   ];
 }
