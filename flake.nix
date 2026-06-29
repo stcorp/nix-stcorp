@@ -70,7 +70,7 @@
                 # django-cms with several extensions and dependencies
                 django-cms = pyfinal.callPackage ./pkgs/external/django-cms.nix { };
                 django-filer = pyfinal.callPackage ./pkgs/external/django-filer.nix { };
-                djangocms-4-migration = pyfinal.callPackage ./pkgs/external/djangocms-4-migration.nix { };
+                django-fsm-2 = pyfinal.callPackage ./pkgs/external/django-fsm-2.nix { };
                 djangocms-alias = pyfinal.callPackage ./pkgs/external/djangocms-alias.nix { };
                 djangocms-attributes-field = pyfinal.callPackage ./pkgs/external/djangocms-attributes-field.nix { };
                 djangocms-column = pyfinal.callPackage ./pkgs/external/djangocms-column.nix { };

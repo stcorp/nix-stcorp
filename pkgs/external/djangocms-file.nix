@@ -9,12 +9,13 @@
 
 buildPythonPackage rec {
   pname = "djangocms-file";
-  version = "3.0.1";
+  version = "4.0.1";
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
-    sha256 = "b4952eb57385fadb31f67ed61e34eec3fe5886669163f959d1b56a9ac0fb5b42";
+    pname = "djangocms_file";
+    inherit version;
+    sha256 = "c5f7415d367c72e38dd3c31e9de97742b31a9eed91c4b6dd38affe22149689c4";
   };
 
   doCheck = false;
