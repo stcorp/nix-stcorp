@@ -11,6 +11,7 @@
   libspatialite,
   pysqlite ? null,
   withPostgres ? true,
+  psycopg ? null,
   psycopg2 ? null,
   withS3 ? false,
   boto3 ? null,
@@ -20,7 +21,7 @@
 
 assert withSqlite -> (sqlite != null && libspatialite != null);
 assert withS3 -> boto3 != null;
-assert withPostgres -> psycopg2 != null;
+assert withPostgres -> psycopg != null || psycopg2 != null;
 assert withSwift -> swiftclient != null;
 
 with builtins;
@@ -28,11 +29,11 @@ with lib;
 
 buildPythonPackage {
   pname = "muninn";
-  version = "7.2.1";
+  version = "7.3.0";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/muninn/archive/7.2.1.tar.gz";
-    sha256 = "f3188c6ef74399106ed12a724a8ccb81d3587a9347db6820f55cdacf70f2e75d";
+    url = "https://github.com/stcorp/muninn/archive/7.3.0.tar.gz";
+    sha256 = "41bab5c05ce2919600c8ce5aa1c7ff7886b748fd85b411f34579c4d9913facc1";
   };
 
   pyproject = true;
@@ -51,7 +52,10 @@ buildPythonPackage {
     sqlite
     libspatialite
   ]
-  ++ optional withPostgres psycopg2
+  ++ optionals withPostgres [
+    psycopg
+    psycopg2
+  ]
   ++ optional withS3 boto3
   ++ optional withSwift swiftclient;
 }
