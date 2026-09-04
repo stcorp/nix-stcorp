@@ -61,7 +61,7 @@ stdenv.mkDerivation {
   '';
 
   configureFlags =
-    [ ] ++ optionals (python != null) [ "--enable-python" ] ++ optional enableShared "--enable-shared";
+    [ "CFLAGS=-std=gnu17" ] ++ optionals (python != null) [ "--enable-python" ] ++ optional enableShared "--enable-shared";
 
   meta = {
     description = "Data harmonization toolset for scientific earth observation data";
