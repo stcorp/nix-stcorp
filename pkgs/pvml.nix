@@ -9,12 +9,12 @@ with builtins;
 
 buildPythonPackage {
   pname = "pvml";
-  version = "4.2.0";
+  version = "4.2.1";
   pyproject = true;
 
   src = fetchurl {
-    url = "https://github.com/stcorp/pvml/archive/refs/tags/4.2.0.tar.gz";
-    sha256 = "33c943584a2510d74a53d4a07ab60ab795b4c338c74668acfdc3ff2910f7dcd7";
+    url = "https://github.com/stcorp/pvml/archive/refs/tags/4.2.1.tar.gz";
+    sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed";
   };
 
   build-system = [ setuptools ];
