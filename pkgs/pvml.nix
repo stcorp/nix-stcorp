@@ -14,7 +14,7 @@ buildPythonPackage {
 
   src = fetchurl {
     url = "https://github.com/stcorp/pvml/archive/refs/tags/4.2.1.tar.gz";
-    sha256 = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed";
+    sha256 = "7630ab90e361a5960c0f3c4934f0f5e91100b283f4d6714529ee73cbedf3b2cb";
   };
 
   build-system = [ setuptools ];
