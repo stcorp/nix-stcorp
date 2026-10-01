@@ -5,61 +5,6 @@
     { self, ... }:
     {
       overlays = {
-        boto135 = (
-          final: prev: {
-            # These are pins for the last boto<1.36 packages (from NixOS 24.11)
-            # This overlay can be included to workaround the changes introduced in
-            # https://github.com/boto/boto3/issues/4392
-            # (such as https://github.com/boto/boto3/issues/4435)
-            pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-              (pyfinal: pyprev: {
-                # use boto<1.36
-                aiobotocore = pyprev.aiobotocore.overridePythonAttrs (attr: {
-                  version = "2.15.1";
-                  src = final.fetchFromGitHub {
-                    owner = "aio-libs";
-                    repo = "aiobotocore";
-                    tag = "2.15.1";
-                    hash = "sha256-kPSkvvXBBwnWrdf0jmDNiTG6T1qpm5pNcPDHpnMFdmc=";
-                  };
-                  doCheck = false;
-                });
-                boto3 = pyprev.boto3.overridePythonAttrs (attr: {
-                  version = "1.35.30";
-                  src = final.fetchFromGitHub {
-                    owner = "boto";
-                    repo = "boto3";
-                    tag = "1.35.30";
-                    hash = "sha256-b08tC8EA6iW0O/7rseD9pTkKh/cJ2fe3xJZkEqxS6VI=";
-                  };
-                  doCheck = false;
-                });
-                botocore = pyprev.botocore.overridePythonAttrs (attr: {
-                  version = "1.35.30";
-                  src = pyfinal.fetchPypi {
-                    pname = "botocore";
-                    version = "1.35.30";
-                    hash = "sha256-q1NQ6KUOSNNx+i1RfWXCmkDEN4jLmhU4f5PqxaI98P0=";
-                  };
-                  doCheck = false;
-                });
-                s3fs = pyprev.s3fs.overridePythonAttrs (attr: {
-                  doCheck = false;
-                });
-                s3transfer = pyprev.s3transfer.overridePythonAttrs (attr: {
-                  version = "0.10.1";
-                  src = final.fetchFromGitHub {
-                    owner = "boto";
-                    repo = "s3transfer";
-                    tag = "0.10.1";
-                    hash = "sha256-EHNkYviafnuU8AADp9oyaDuAnoPOdOVNSLCcoONnHPY=";
-                  };
-                  doCheck = false;
-                });
-              })
-            ];
-          }
-        );
         external = (
           final: prev: {
             pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
