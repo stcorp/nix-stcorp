@@ -140,6 +140,7 @@
                 muninn-generic-products = pyfinal.callPackage ./pkgs/muninn-generic-products.nix { };
                 muninn-geoms = pyfinal.callPackage ./pkgs/muninn-geoms.nix { };
                 muninn-iers = pyfinal.callPackage ./pkgs/muninn-iers.nix { };
+                muninn-mtg = pyfinal.callPackage ./pkgs/muninn-mtg.nix { };
                 muninn-sentinel1 = pyfinal.callPackage ./pkgs/muninn-sentinel1.nix { };
                 muninn-sentinel2 = pyfinal.callPackage ./pkgs/muninn-sentinel2.nix { };
                 muninn-sentinel5p = pyfinal.callPackage ./pkgs/muninn-sentinel5p.nix { };
