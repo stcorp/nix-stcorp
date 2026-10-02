@@ -8,12 +8,12 @@ with builtins;
 
 buildPythonPackage {
   pname = "muninn-mtg";
-  version = "2026-01-07";
+  version = "2025-10-02";
   pyproject = true;
 
   src = fetchGit {
     url = "https://github.com/stcorp/muninn-mtg.git";
-    rev = "3ec5e994109e7073d398fb32f770a93834aef67d";
+    rev = "b0186870ef0640a8f1d3fe50853846571e84bbf6";
     ref = "main";
   };
 
