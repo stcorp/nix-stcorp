@@ -24,11 +24,11 @@ in
 
 stdenv.mkDerivation {
   pname = "coda";
-  version = "2.25.6";
+  version = "2.25.7";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/coda/archive/2.25.6.tar.gz";
-    sha256 = "07faa2775b7940db34b1d8b5c1deabc5710377b79e51a48bf219191e85ddd16b";
+    url = "https://github.com/stcorp/coda/archive/2.25.7.tar.gz";
+    sha256 = "6baf6d89ca08abd39cd3e6b87d85061181f86f9e89aa70e98bc61627faf4e30b";
   };
 
   buildInputs = [
