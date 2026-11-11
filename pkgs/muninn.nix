@@ -29,11 +29,11 @@ with lib;
 
 buildPythonPackage {
   pname = "muninn";
-  version = "7.5.0";
+  version = "7.5.1";
 
   src = fetchurl {
-    url = "https://github.com/stcorp/muninn/archive/7.5.0.tar.gz";
-    sha256 = "245b746004e6eaf7ef88c093f0395c4bf0524ae52aa6b877776e6782c19b310c";
+    url = "https://github.com/stcorp/muninn/archive/7.5.1.tar.gz";
+    sha256 = "d5e2d206be550e739b2d08f0eef4be390f1eccb1e7de91bbebd924a4a05e3165";
   };
 
   pyproject = true;
