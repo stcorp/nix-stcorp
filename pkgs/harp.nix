@@ -25,12 +25,12 @@ in
 
 stdenv.mkDerivation {
   pname = "harp";
-  version = "1.30";
+  version = "1.31";
 
   src = fetchurl {
     # use official source package since we need the codadefs of the submodules to be included
-    url = "https://github.com/stcorp/harp/releases/download/1.30/harp-1.30.tar.gz";
-    sha256 = "b9177bff3ad6bf753529cc1e2f83c5f70b893c9f858c9642120ee63bda62fac3";
+    url = "https://github.com/stcorp/harp/releases/download/1.31/harp-1.31.tar.gz";
+    sha256 = "f0d48ebf7305e2842f2ca35d38f752fb0fe6844a6fcd9c64b31fe1f086860afe";
   };
 
   buildInputs = [
